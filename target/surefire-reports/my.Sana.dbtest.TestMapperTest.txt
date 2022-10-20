@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: my.Sana.dbtest.TestMapperTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.177 sec <<< FAILURE! - in my.Sana.dbtest.TestMapperTest
+testGetTime(my.Sana.dbtest.TestMapperTest)  Time elapsed: 0.022 sec  <<< ERROR!
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): my.Sana.Mapper.TestMapper.getTime
+	at my.Sana.dbtest.TestMapperTest.testGetTime(TestMapperTest.java:18)
+
