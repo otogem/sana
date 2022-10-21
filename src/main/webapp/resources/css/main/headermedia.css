@@ -14,7 +14,7 @@
 	margin: 5px;
 	transition: all 0.5s;
 }
-
+/* 햄버거 메뉴판 */
 .toggle .line1{
 	transform:rotate(-45deg) translate(-8px, 6px);
 	/* -45e돌리고 x축 -8px 이동 y 축으로 +6px 이동*/

@@ -9,6 +9,7 @@
 
 a{
 	text-decoration: none;
+	color: black;
 }
 
 li{
@@ -19,15 +20,14 @@ li{
 #home_header{
 	width:100%;
 	height:120px;
-	background-color: black;
+	background-color: #383838;
 }
 
 .nav{
 	display: flex;
 	justify-content: space-between;
 	align-content: center;
-	padding: 20px 50px;
-	color:white;
+	padding: 26px 50px;
 }
 
 .title{
@@ -39,9 +39,16 @@ li{
 	color: white;
 }
 
+/* 헤더 우측 파트 시작*/
+#home_header_right{
+	margin-bottom: 3px;	
+}
+
 #home_header_right>ul{
+	padding-top:10px;
 	display: flex;
 }
+
 ul>li.user{
 	background-image: url(/resources/image/home/user.png);
 }
@@ -54,19 +61,51 @@ ul>li.cart{
 	width: 50px;
 	height: 50px;
 	background-size: 50px 50px;
+	margin-left: 7px;
 }
 
-@media screen and (min-width:761px){
+.fab>a{
+	display: block;
+	height: 100%;
+}
+
+#home_header_user{/*유저 편의용 기능 몇가지 추가한 작은 빠른 이동수단.*/
+	display: none;
+	width:200px;
+	transform: translateX(-38%);
+	border-radius:7px;
+	border:1px solid #949494;
+	text-align: center;
+	background-color: white;
+	color: black;
+}
+
+#home_header_user>ul>li{
+	cursor: pointer;
+}
+
+#home_header_user>ul>li:hover{
+	background-color: #fff2e1;
+}
+
+#home_header_user>ul>li>a{
+	display: block;
+	padding: 15px 0px;
+}
+
+/* 헤더 우측 파트 끝*/
+@media screen and (min-width:761px){/*데스크탑,태블릿은 아래의 설정 적용*/
 #home_header_center{
 	display: flex;
 }
 
 #home_header_center>li{
-	padding:20px 10px;
-	font-size: 20px;	
+	padding:20px 10px 20px 0px;
+	font-size: 16px;
+	color: white;	
 }
 
-li>a{
+#home_header_center>li>a{
 	color: white;
 }
 
