@@ -29,11 +29,51 @@
 	/* 45e돌리고 x축 -8px 이동 y 축으로 -6px 이동*/
 }
 
-#home_header_center{
-	display:none;
+.fab{
+	display: none;
 }
 
-.fab{
-	width: 50px;
-	height: 50px;
+.ham-con{
+  width: 100%;
+  height: 1000px;
+  background-color: #383838;
+  position: fixed;
+  top:120px;
+  z-index: 99;
+  left:-100%;
+  opacity: 0;
+}
+
+.search-con{
+  width: 100%;
+  height: 50px;
+  position: relative;
+  top: 50px;
+  margin-bottom: 80px;
+  overflow: hidden;
+}
+
+.search-con input{
+  width: 100%;
+  height: 100%;
+  float: left;
+  line-height: 50px;
+  border:1px solid black;
+  border-radius: 5px;
+}
+
+.ham-menu>.ham-sub-menu a {
+  position: relative;
+  float: left;
+  display: block;
+  width: 100%;
+  z-index: 99;
+  color:#dedede;
+  font-size: 24px;
+  padding:10px;
+  border-bottom: solid 1px #dedede;
+}
+
+.ham-menu>.ham-sub-menu a:hover {
+  color: #fff;
 }

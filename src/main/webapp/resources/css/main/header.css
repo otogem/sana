@@ -9,7 +9,6 @@
 
 a{
 	text-decoration: none;
-	color: black;
 }
 
 li{
@@ -111,5 +110,12 @@ ul>li.cart{
 
 .burger{
 	display: none;
+}
+
+.search-con{
+	display: none;
+}
+.ham-con{
+	opacity: 1;
 }
 }

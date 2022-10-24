@@ -1,6 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+  <head>
+<title>Home</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<link href="../resources/css/main/header.css" rel="stylesheet" type="text/css">
+	<link href="../resources/css/main/headermedia.css" rel="stylesheet" type="text/css" media="screen and (max-width:760px)">
+	<link href="../resources/css/main/footer.css" rel="stylesheet" type="text/css">
+	<link href="../resources/css/main/footermedia.css" rel="stylesheet" type="text/css" media="screen and (max-width:760px)">
+</head>
+<body>
 <section id="home_header">
 	<article class="nav">
 	<!-- 햄버거 버튼 -->
@@ -11,18 +20,31 @@
 		</div>
 	<!--  햄버거 버튼 끝 -->
 	
+	<!--  햄버거 메뉴 시작 -->
 		<div class="title"><a href="#">TEST</a></div>
-		<ul id="home_header_center">
+	 		<div class="ham-con">
+
+            <div class="navbar-nav">
+                <div class="search-con d-flex justify-content-center">
+                    <input type="text" placeholder="검색어를 입력해주세요." />
+                    <i class="bi bi-search"></i>
+                </div>
+            </div>
+	<div id="ham-menu wrap">
+		<div class="ham-menu mt-5">
+		<ul id="home_header_center" class="ham-sub-menu">
 			<li><a href="/">HOME</a></li>
-			<li>1번태그</li>
-			<li>2번태그</li>
-			<li>3번태그</li>
-			<li>4번태그</li>
-			<li>5번태그</li>
-			<li>6번태그</li>
-			<li>7번태그</li>
-			<li>8번태그</li>
+			<li><a href="/">1번태그</a></li>
+			<li><a href="/">2번태그</a></li>
+			<li><a href="/">3번태그</a></li>
+			<li><a href="/">4번태그</a></li>
+			<li><a href="/">5번태그</a></li>
+			<li><a href="/">6번태그</a></li>
 		</ul>
+		</div>
+		</div>
+		</div>
+		<!--  햄버거 메뉴 끝 -->
 		<div id="home_header_right">
 			<ul>
 				<li class="user fab">
