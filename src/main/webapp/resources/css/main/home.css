@@ -1,10 +1,11 @@
 @charset "UTF-8";
-
-*{
-	margin: 0;
-	padding: 0;
+/* 기초 틀 잡는 용도 */
+#wrap{
+	position: relative;
+	width: 100%;
 }
 
-p{
-	color: red;
+#main-section{
+	padding-bottom: 20px;
 }
+/* 기초 틀 잡는 용도 */

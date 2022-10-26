@@ -46,29 +46,42 @@ button();
 	  $(burger).on("click", function () {
 	    if (h == 0) {
 			  $('.ham-con').animate({
-				  left: '0%',
-				  opacity: 1
+				  left: '0%'
 			  }, 150);
 			  $(this).addClass('active-1');
 			  h++;
 		  } else if (h == 1) {
 			  $('.ham-con').animate({
-				  left: '-100%',
-				  opacity: 0
+				  left: '-110%'
 			  }, 150);
 			  $(this).removeClass('active-1');
 			  h--;
 		  }
-		  $(window).scroll(function() {
-			  sct = $(window).scrollTop();
-	      if(sct>30){
-	        $('.ham-con').css({
-	          opacity: 1,
-	          left :'-80%'
-	        }, 150);
-	        $(burger).removeClass('active-1');
-	        h=0;
-	      }
-	    });
+	  });
+	 /*   $(window).resize(function (){
+	    	  // width값을 가져오기
+	    	  var width_size = window.outerWidth;
+	    	  console.log(width_size);
+	    	  // 800 이하인지 if문으로 확인
+	    	  if (width_size > 760) {
+	    	    $('.ham-con').animate({
+	    	    	left: '-100%',
+	    	    	opacity: 1
+	    	    }, 150);
+	    	    $('.burger').removeClass('toggle active-1');
+	    	    h=0;
+	    	  }else if(width_size < 760){
+	    		  $('.ham-con').animate({
+	    			  opacity: 0
+	    		  }, 150);
+	    	  };
+	    	});*/
+	  
+	  $(window).resize(function (){
+		  var width_size = window.innerWidth;
+		  if(width_size>761) {
+			  $('.burger').removeClass('toggle active-1');
+			  $('.ham-con').css('left','-110%');
+	  }h=0
 	  });
 });

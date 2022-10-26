@@ -12,7 +12,7 @@
 	width:45px;
 	height: 5px;
 	margin: 5px;
-	transition: all 0.5s;
+	transition: all 0.2s;
 }
 /* 햄버거 메뉴판 */
 .toggle .line1{
@@ -40,8 +40,8 @@
   position: fixed;
   top:120px;
   z-index: 99;
-  left:-100%;
-  opacity: 0;
+  left:-110%;
+  opacity: 1;
 }
 
 .search-con{

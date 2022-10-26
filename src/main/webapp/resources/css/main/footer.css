@@ -1,1 +1,69 @@
 @charset "UTF-8";
+
+footer{
+	width:100%;
+	bottom: 0px;
+	background-color: #c0c0c0;
+}
+
+#footer-cont{
+	max-width:1250px;
+	margin:0 auto;
+}
+
+#footer-head{
+	position: relative;
+}
+
+#footer-head::after{
+	content: "";
+    display: block;
+    clear: both;
+}
+
+.head-title{
+	float:left;
+}
+
+.sns-link{
+	display: flex;
+	float: right;
+}
+
+.sns-link>li>a{
+	display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+}
+/* 사이트 로고 */
+.sns-link>li>a::before{
+	display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-size: 100%;
+    content: '';
+}
+
+.sns1::before{
+	background-image: url(/resources/image/home/facebooklogo.png);
+}
+
+.sns2::before{
+	background-image: url(/resources/image/home/instagramlogo.png);
+}
+
+.sns3::before{
+	background-image: url(/resources/image/home/twitterlogo.png);
+}
+
+.sns4::before{
+	background-image: url(/resources/image/home/youtubelogo.png);
+}
+
+
+
+
+
+/* 사이트 로고 */

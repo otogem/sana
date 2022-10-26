@@ -69,6 +69,8 @@ ul>li.cart{
 }
 
 #home_header_user{/*유저 편의용 기능 몇가지 추가한 작은 빠른 이동수단.*/
+	z-index:10;
+	position:absolute;
 	display: none;
 	width:200px;
 	transform: translateX(-38%);
@@ -91,7 +93,6 @@ ul>li.cart{
 	display: block;
 	padding: 15px 0px;
 }
-
 /* 헤더 우측 파트 끝*/
 @media screen and (min-width:761px){/*데스크탑,태블릿은 아래의 설정 적용*/
 #home_header_center{
@@ -115,7 +116,9 @@ ul>li.cart{
 .search-con{
 	display: none;
 }
+
 .ham-con{
 	opacity: 1;
+	left:-110%;
 }
 }
