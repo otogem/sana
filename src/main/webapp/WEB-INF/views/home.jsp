@@ -4,12 +4,12 @@
 <html>
   <head>
 <title>Home</title>
-	<jsp:include page="maincss.jsp"></jsp:include>
+	<jsp:include page="main/maincss.jsp"></jsp:include>
 	<link href="../resources/css/main/home.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <!-- 헤더 파트  -->
-	<jsp:include page="header.jsp"></jsp:include>
+	<jsp:include page="main/header.jsp"></jsp:include>
 	<script type="text/javascript" src="/resources/js/main/header.js"></script>
 <!-- 헤더 파트 끝 -->
 	<div id="wrap">
@@ -19,7 +19,7 @@
 		</section>
 
 	<!-- footer 파트 시작 -->
-		<jsp:include page="footer.jsp"></jsp:include>
+		<jsp:include page="main/footer.jsp"></jsp:include>
 	<!-- footer 파트 시작 -->
 	</div>
 </body>

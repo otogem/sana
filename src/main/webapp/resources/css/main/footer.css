@@ -7,12 +7,13 @@ footer{
 }
 
 #footer-cont{
-	max-width:1250px;
-	margin:0 auto;
+	max-width: 1250px;
+    margin: 0 auto;
 }
-
+/*푸터 머리 시작*/
 #footer-head{
 	position: relative;
+    padding: 12px 0px;
 }
 
 #footer-head::after{
@@ -30,6 +31,9 @@ footer{
 	float: right;
 }
 
+.sns-link>li{
+	margin-right:20px;
+}
 .sns-link>li>a{
 	display: flex;
     align-items: center;
@@ -37,11 +41,11 @@ footer{
     font-size: 12px;
     line-height: 16px;
 }
-/* 사이트 로고 */
+/* 사이트 로고 시작*/
 .sns-link>li>a::before{
 	display: inline-block;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     background-size: 100%;
     content: '';
 }
@@ -62,8 +66,73 @@ footer{
 	background-image: url(/resources/image/home/youtubelogo.png);
 }
 
+/* 사이트 로고 끝 */
+/*푸터 머리 끝*/
 
+/* 푸터 메인 시작*/
+#footer-main{
+	position: relative;
+    padding-top: 16px;
+}
 
+/*푸터 유틸 시작*/
+#footer-util{
+	
+}
 
+#footer-util>ul{
+	padding: 7px 0px;
+}
 
-/* 사이트 로고 */
+#footer-util>ul>li{
+	display: inline-block;
+}
+
+@media screen and (min-width:761px){
+#footer-util>ul>li:not(:last-child)::after{
+	display: inline-block;
+    width: 1px;
+    height: 10px;
+    margin: 0 6px;
+    background-color: #494949;
+    vertical-align: -1px;
+    content: '';
+}
+}
+
+#footer-util>ul>li>a{
+	cursor: pointer;
+}
+
+#footer-util>ul>li>a:hover {
+	text-decoration:underline;
+}
+/*푸터 유틸 끝*/
+
+/*푸터 사업자 대표정보*/
+#footer-content>p>span{
+	display: inline-block;
+}
+
+/*푸터 내용-전화and팩스 시작*/
+#footer-coll{
+	padding: 7px 0px;
+}
+#footer-coll>li{
+	display: inline-block;
+}
+
+@media screen and (min-width:761px){
+#footer-coll>li:not(:last-child)::after{
+	display: inline-block;
+    width: 1px;
+    height: 10px;
+    margin: 0 6px;
+    background-color: #494949;
+    vertical-align: -1px;
+    content: '';
+}
+}
+/*푸터 내용-전화and팩스 끝*/
+
+/* 푸터 메인 끝*/

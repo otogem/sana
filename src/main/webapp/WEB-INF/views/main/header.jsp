@@ -42,7 +42,7 @@
 					<a></a>
 					<div id="home_header_user">
 						<ul>
-							<li><a href="/home">로그인</a></li>
+							<li><a href="/service/selogin">로그인</a></li>
 							<li><a>회원 가입</a></li>
 						</ul>
 					</div>

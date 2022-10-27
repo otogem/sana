@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+/*푸터 머리-사이즈별 이동*/
+.head-title{
+	float:none;
+}
+
+.sns-link{
+	display: flex;
+	float: none;
+	flex-wrap:wrap;
+}
+/*푸터 머리-사이즈별 이동*/
+
+/*푸터 유틸 시작*/
+#footer-util>ul>li{
+	display: inline-block;
+	width:49%;
+	margin:12px 0px 0px 0px;
+}
+/*푸터 유틸 끝*/

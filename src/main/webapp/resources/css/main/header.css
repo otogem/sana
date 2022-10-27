@@ -9,6 +9,7 @@
 
 a{
 	text-decoration: none;
+	color:black;
 }
 
 li{
@@ -87,6 +88,7 @@ ul>li.cart{
 
 #home_header_user>ul>li:hover{
 	background-color: #fff2e1;
+	border-radius: 7px;
 }
 
 #home_header_user>ul>li>a{
