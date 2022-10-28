@@ -13,17 +13,17 @@
 	    				</a>
 	    			</li>
 	    			<li>
-	    				<a href="" target="_black" title="instagram" class="sns2">
+	    				<a href="https://www.instagram.com/" target="_black" title="instagram" class="sns2">
 	    				<span>TEST 인스타 그램</span>
 	    				</a>
 	    			</li>
 	    			<li>
-	    				<a href="" target="_black" title="twitter" class="sns3">
+	    				<a href="https://twitter.com/?lang=ko" target="_black" title="twitter" class="sns3">
 	    				<span>TEST 트위터</span>
 	    				</a>
 	    			</li>
 	    			<li>
-	    				<a href="" target="_black" title="yotube" class="sns4">
+	    				<a href="https://www.youtube.com/" target="_black" title="yotube" class="sns4">
 	    				<span>TEST 유튜브</span>
 	    				</a>
 	    			</li>

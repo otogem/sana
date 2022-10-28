@@ -1,6 +1,6 @@
 package my.Sana.Controller;
 
-import java.util.Locale;
+
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,5 +11,10 @@ public class ServiceController {
 	@RequestMapping(value="/service/selogin",method = RequestMethod.GET)
 	public String login() {
 		return "/service/selogin";
+	}
+	
+	@RequestMapping(value="/service/seuser",method = RequestMethod.GET)
+	public String user() {
+		return "/service/seuser";
 	}
 }

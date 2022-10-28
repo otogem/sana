@@ -24,6 +24,8 @@ footer{
 
 .head-title{
 	float:left;
+	line-height: 50px;
+	font-size: 22px;
 }
 
 .sns-link{

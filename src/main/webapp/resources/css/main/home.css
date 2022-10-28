@@ -1,9 +1,5 @@
 @charset "UTF-8";
 /* 기초 틀 잡는 용도 */
-#wrap{
-	position: relative;
-	width: 100%;
-}
 
 #main-section{
 	padding-bottom: 20px;

@@ -12,7 +12,7 @@
 	<!--  햄버거 버튼 끝 -->
 	
 	<!--  햄버거 메뉴 시작 -->
-		<div class="title"><a href="#">TEST</a></div>
+		<div class="title"><a href="/">TEST</a></div>
 	 		<div class="ham-con">
 
             <div class="navbar-nav">
@@ -43,7 +43,7 @@
 					<div id="home_header_user">
 						<ul>
 							<li><a href="/service/selogin">로그인</a></li>
-							<li><a>회원 가입</a></li>
+							<li><a href="/service/seuser">회원 가입</a></li>
 						</ul>
 					</div>
 				</li>

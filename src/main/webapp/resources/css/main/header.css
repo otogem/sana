@@ -15,6 +15,11 @@ a{
 li{
 	list-style-type: none;
 }
+
+#wrap{
+	position: relative;
+	width: 100%;
+}
 /*공통 라인 끝*/
 
 #home_header{
