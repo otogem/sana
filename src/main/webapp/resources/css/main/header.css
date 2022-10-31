@@ -7,6 +7,11 @@
 	padding: 0;	
 }
 
+body{
+	padding-top: 120px;
+		
+}
+
 a{
 	text-decoration: none;
 	color:black;
@@ -25,7 +30,18 @@ li{
 #home_header{
 	width:100%;
 	height:120px;
-	background-color: #383838;
+	background-color: black;
+	position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 98;
+}
+
+#home_header.fixed{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
 }
 
 .nav{
