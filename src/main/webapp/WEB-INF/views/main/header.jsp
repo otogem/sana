@@ -42,8 +42,8 @@
 					<a></a>
 					<div id="home_header_user">
 						<ul>
-							<li><a href="/service/selogin">로그인</a></li>
-							<li><a href="/service/seuser">회원 가입</a></li>
+							<li><a href="/member/mblogin">로그인</a></li>
+							<li><a href="/member/mbuser">회원 가입</a></li>
 						</ul>
 					</div>
 				</li>
