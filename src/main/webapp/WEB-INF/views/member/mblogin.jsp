@@ -5,7 +5,7 @@
   <head>
 <title>Home</title>
 	<jsp:include page="../main/maincss.jsp"></jsp:include>
-	<link href="../resources/css/service/selogin.css" rel="stylesheet" type="text/css">
+	<link href="../resources/css/member/mblogin.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <!-- 헤더 파트  -->

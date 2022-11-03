@@ -5,7 +5,7 @@
   <head>
 <title>Home</title>
 	<jsp:include page="../main/maincss.jsp"></jsp:include>
-		<link href="../resources/css/service/seuser.css" rel="stylesheet" type="text/css">
+		<link href="../resources/css/member/mbuser.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <!-- 헤더 파트  -->
@@ -16,37 +16,39 @@
 		<section id="main-section">
 			<div id="main-user-box">
 				<div id="main-user">
+				<form action="/member/mbuser" method="post">
 					<div class="main-user-line">
 						<label for="id">아이디<span class="req">*</span>:</label>
-	    				<input type="text" id="id" name="user_id">
+	    				<input type="text" id="id" name="id">
 	    			</div>
 	    			<div class="main-user-line">
 	    				<label for="password">비밀번호<span class="req">*</span>:</label>
-	    				<input type="text" id="password" name="user_password">
+	    				<input type="text" id="password" name="password">
 	    			</div>
 	    			<div class="main-user-line">	
 	    				<label for="password">비밀번호 확인<span class="req">*</span>:</label>
-	    				<input type="text" id="password" name="user_password">
+	    				<input type="text" id="password" name="password">
 	    			</div>
 	    			<div class="main-user-line">	
 			        	<label for="name">이름<span class="req">*</span>:</label>
-	    				<input type="text" id="name" name="user_name">
+	    				<input type="text" id="name" name="name">
 	    			</div>
 	    			<div class="main-user-line">	
 	    				<label for="nickname">닉네임<span class="req">*</span>:</label>
-	    				<input type="text" id="nickname" name="user_nickname">
+	    				<input type="text" id="nickname" name="nickname">
 	    			</div>
 	    			<div class="main-user-line">	
 	    				<label for="phone">전화번호<span class="req">*</span>:</label>
-	    				<input type="text" id="phone" name="user_phone">
+	    				<input type="text" id="phone" name="phone">
 	    			</div>
 	    			<div class="main-user-line">
 	    				<label for="email">이메일<span class="req">*</span>:</label>
-	    				<input type="text" id="email" name="user_email">
+	    				<input type="text" id="email" name="email">
     				</div>
     				<div class="main-user-line">
-						<button id="main-user-button" type="button">회원가입</button>
+						<input id="main-user-submit" type="submit" valuse="회원가입">
 					</div>
+					</form>
 				</div>
 			</div>
 		</section>
