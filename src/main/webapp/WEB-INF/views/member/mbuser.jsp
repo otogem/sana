@@ -23,11 +23,13 @@
 	    			</div>
 	    			<div class="main-user-line">
 	    				<label for="password">비밀번호<span class="req">*</span>:</label>
-	    				<input type="text" id="password" name="password">
+	    				<input type="text" id="password" class="pw" name="password">
 	    			</div>
 	    			<div class="main-user-line">	
-	    				<label for="password">비밀번호 확인<span class="req">*</span>:</label>
-	    				<input type="text" id="password" name="password">
+	    				<label for="password2">비밀번호 확인<span class="req">*</span>:
+	    				<span id="psw-success" style="display: none;">비밀번호가 일치합니다.</span>
+	    				<span id="psw-fail" style="display: none;">비밀번호가 일치하지 않습니다.</span></label>
+	    				<input type="text" id="password2" class="pw" name="password2">
 	    			</div>
 	    			<div class="main-user-line">	
 			        	<label for="name">이름<span class="req">*</span>:</label>
@@ -48,6 +50,7 @@
     				<div class="main-user-line">
 						<input id="main-user-submit" type="submit" valuse="회원가입">
 					</div>
+					<script type="text/javascript" src="/resources/js/member/mbuser.js"></script>
 					</form>
 				</div>
 			</div>

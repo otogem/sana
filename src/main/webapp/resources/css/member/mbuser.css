@@ -36,7 +36,7 @@
 
 .main-user-line>label{
 	padding-bottom: 10px;
-	display: block;
+	display: inline-block;
 }
 
 .main-user-line>input{
@@ -50,6 +50,17 @@
 	margin: 2px;
     color: #1ab188;
 }
+/*비밀번호 확인용 css 시작*/
+#psw-success{
+	color: green;
+	font-weight: bold;
+}
+
+#psw-fail{
+	color:red;
+	font-weight: bold;
+}
+/*비밀번호 확인용 css 시작*/
 
 #main-user-submit{
 	width: 100%;
