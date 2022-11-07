@@ -24,7 +24,7 @@ public class MemberController {
 	public String user() {
 		return "/member/mbuser";
 	}
-	
+	//user 회원가입 정보 전송
 	@RequestMapping(value="/member/mbuser",method = RequestMethod.POST)
 	public String userpost(MemberVO member) {
 		

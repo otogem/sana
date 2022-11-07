@@ -24,7 +24,7 @@
 						<input class="main-input-box" type="password" placeholder="비밀번호를 입력해 주세요.">
 					</div>
 					<div class="main-login-line">
-						<button id="main-login-button" type="button">로그인</button>
+						<a href="/"><button id="main-login-button" type="button">로그인</button></a>
 					</div>
 					<div class="main-login-line">
 						<span>마지막에 채울것들 카카오톡 로그인</span>

@@ -16,7 +16,7 @@
 		<section id="main-section">
 			<div id="main-user-box">
 				<div id="main-user">
-				<form action="/member/mbuser" method="post">
+				<form name="joinForm" action="/member/mbuser" method="post" onsubmit="return join(); ">
 					<div class="main-user-line">
 						<label for="id">아이디<span class="req">*</span>:</label>
 	    				<input type="text" id="id" name="id">
@@ -41,7 +41,7 @@
 	    			</div>
 	    			<div class="main-user-line">	
 	    				<label for="phone">전화번호<span class="req">*</span>:</label>
-	    				<input type="text" id="phone" name="phone">
+	    				<input type="text" id="phone" name="phone" oninput="autophone(this)" >
 	    			</div>
 	    			<div class="main-user-line">
 	    				<label for="email">이메일<span class="req">*</span>:</label>
