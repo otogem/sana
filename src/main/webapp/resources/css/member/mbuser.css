@@ -46,6 +46,22 @@
     margin: 5px 0px;
 }
 
+.main-user-line>div>input{
+	height: 40px;
+    border: 1px #ddd solid;
+    margin: 5px 0px;
+}
+
+.main-user-line>div>#addr{
+	width:65%;
+}
+
+.main-user-line>div>#addr-bt{
+	width:25%;
+	cursor:pointer;
+}
+
+
 .req{
 	margin: 2px;
     color: #1ab188;

@@ -19,6 +19,14 @@
    		}
    	}
    });
+	
+	//전화번호 자동 하이픈
+	const autophone = (target) => {
+		 target.value = target.value
+		   .replace(/[^0-9]/g, '')
+		  .replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, "$1-$2-$3").replace(/(\-{1,2})$/g, "");
+		}
+	   
 //아이디 유효성 검사시작
 	const joinForm = document.joinForm;
 	
@@ -124,12 +132,8 @@ if(userpw.value != userpw_re.value) {
    
    
  //휴대전화 정규식 시작
-   let regph= /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/
-   const autophone = (target) =>{
-	   target.value = target.value
-			   .replace(/[^0-9]/g, '')
-			  .replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, "$1-$2-$3").replace(/(\-{1,2})$/g, "");
-   }
+   let regph= /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/	   
+		  
    const phone = joinForm.phone;
     if(!regph.test(phone.value)) {
 		alert("올바른 휴대전화 형식이 아닙니다.");
@@ -138,7 +142,21 @@ if(userpw.value != userpw_re.value) {
 	}	   
  //휴대전화 정규식 끝  
    
-   
+//이메일 정규식 시작
+	let regem = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+	
+	const email=joinForm.email;
+	if(email.value=="") {
+		alert("이메일을 입력해주세요.");
+		return false;
+	}else {
+		if(!regem.test(email.value)) {
+			alert("이메일 형식에 맞게 입력해주세요.");
+			return false;
+		}
+	}
+	
+//이메일 정규식 끝
    
    
    

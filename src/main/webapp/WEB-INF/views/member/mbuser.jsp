@@ -5,7 +5,21 @@
   <head>
 <title>Home</title>
 	<jsp:include page="../main/maincss.jsp"></jsp:include>
-		<link href="../resources/css/member/mbuser.css" rel="stylesheet" type="text/css">
+	<link href="../resources/css/member/mbuser.css" rel="stylesheet" type="text/css">
+	
+	<!-- 카카오 우편주소 스크립트 -->
+	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script>
+	function kakaopost() {
+	    new daum.Postcode({
+	        oncomplete: function(data) {
+	            document.querySelector("#addr").value = data.zonecode;
+	            document.querySelector("#addr").value =  data.address
+	        }
+	    }).open();
+	}
+	</script>
+	
 </head>
 <body>
 <!-- 헤더 파트  -->
@@ -41,7 +55,15 @@
 	    			</div>
 	    			<div class="main-user-line">	
 	    				<label for="phone">전화번호<span class="req">*</span>:</label>
-	    				<input type="text" id="phone" name="phone" oninput="autophone(this)" >
+	    				<input type="text" id="phone" name="phone" oninput="autophone(this)" maxlength="13">
+	    			</div>
+	      			<div class="main-user-line">	
+	    				<label for="addr">주소<span class="req">*</span>:</label>
+	    					<div>
+	    					<input type="text" id="addr" name="addr" readonly="readonly">
+	    				 	<input type="button" id="addr-bt" value="우편번호찾기" onclick="kakaopost()">
+	    				 	</div>
+	    				 <input type="text" name="address" id="address" placeholder="상세주소를 입력해주세요.">
 	    			</div>
 	    			<div class="main-user-line">
 	    				<label for="email">이메일<span class="req">*</span>:</label>
