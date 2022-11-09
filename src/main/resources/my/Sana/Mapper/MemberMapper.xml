@@ -6,8 +6,8 @@
 <mapper namespace="my.Sana.Mapper.MemberMapper">
 
 	<insert id="mbuser">
-		insert into member(id,password,name,nickname,phone,email)
-		values(#{id},#{password},#{name},#{nickname},#{phone},#{email})
+		insert into member(id,password,name,nickname,phone,email,addr1,addr2,addr3,birth)
+		values(#{id},#{password},#{name},#{nickname},#{phone},#{email},#{addr1},#{addr2},#{addr3},#{birth})
 	</insert>
 		<select id="mblogin" resultType="my.Sana.Model.MemberVO">
 			select *

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import my.Sana.Model.MemberVO;
 import my.Sana.Service.MemberService;
@@ -31,5 +32,12 @@ public class MemberController {
 		ms.mbuser(member);
 		
 		return "redirect:/member/mblogin";
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="idCheck",method = RequestMethod.GET)
+	public int overID(MemberVO member) {
+		int result = MemberService.overID(member);
+		return result;
 	}
 }

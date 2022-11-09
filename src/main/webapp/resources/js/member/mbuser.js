@@ -1,6 +1,30 @@
 /**
  * 
  */
+
+	//아아디 중복체크 검사 시작
+	$("#overID").click(function(){
+		$("#main-user-submit").attr("type","button");
+		const id = $("#user-id").val();
+		$.ajax({
+			type:"get",
+			async:false,
+			url:"http://localhost:8080/member/idCheck",
+			data:{id: id},
+			success: function(data){
+				console.log(id)
+				if(data == 1) {
+					alert("이미사용중인 ID입니다.");
+				}else {
+					alert("사용가능한 ID 입니다.")
+					$("#main-user-submit").attr("type","submit");
+				}
+			}
+		})
+	})
+	
+	//아아디 중복체크 검사 끝
+	
    //비밀번호 안맞을시 글자 띄우는 js
 
 	$(".pw").focusout(function(){
@@ -10,7 +34,7 @@
    	if( pwd1 != '' && pwd2 == '') {
    		null;
    	}else if(pwd1 !="" || pwd2 !="") {
-   		if(pwd1 == pwd2) {
+   		if(pwd1 == pwd2 && pwd1.length > 7) {
    			$("#psw-success").css('display','inline-block');
    			$("#psw-fail").css('display','none');
    		}else {
@@ -26,7 +50,61 @@
 		   .replace(/[^0-9]/g, '')
 		  .replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, "$1-$2-$3").replace(/(\-{1,2})$/g, "");
 		}
-	   
+	
+	//생년월일 생성용 js-년도
+	const birthYear = document.querySelector('#birth-year')
+			
+	isYearOptionExisted = false;
+	birthYear.addEventListener('focus', function(){
+		//year 목록 생성되지 않았을 때 (최초 클릭 시)
+		if(!isYearOptionExisted) {
+			isYearOptionExisted=true
+			for(var i = 1900; i <=2022; i++) {
+				const YearOption = document.createElement('option')
+				YearOption.setAttribute('value', i)
+				YearOption.innerText = i+"년"
+				//birthYear 의 자식 요소로 추가
+				this.appendChild(YearOption);
+			}
+		}
+	});
+	
+	//생년월일 생성용 js-월
+	const birthMonth = document.querySelector('#birth-month')
+			
+	isMonthOptionExisted = false;
+	birthMonth.addEventListener('focus', function(){
+		//year 목록 생성되지 않았을 때 (최초 클릭 시)
+		if(!isMonthOptionExisted) {
+			isMonthOptionExisted=true
+			for(var i = 1; i <=12; i++) {
+				const MonthOption = document.createElement('option')
+				MonthOption.setAttribute('value', i)
+				MonthOption.innerText = i+"월"
+				//birthYear 의 자식 요소로 추가
+				this.appendChild(MonthOption);
+			}
+		}
+	});
+	
+	//생년월일 생성용 js-일
+	const birthDay = document.querySelector('#birth-day')
+			
+	isDayOptionExisted = false;
+	birthDay.addEventListener('focus', function(){
+		//year 목록 생성되지 않았을 때 (최초 클릭 시)
+		if(!isDayOptionExisted) {
+			isDayOptionExisted=true
+			for(var i = 1; i <=31; i++) {
+				const DayOption = document.createElement('option')
+				DayOption.setAttribute('value', i)
+				DayOption.innerText = i+"일"
+				//birthYear 의 자식 요소로 추가
+				this.appendChild(DayOption);
+			}
+		}
+	});
+	
 //아이디 유효성 검사시작
 	const joinForm = document.joinForm;
 	
@@ -44,8 +122,8 @@
 		id.focus();
 		return false;
 	}
-	//이곳에 아이지 중복체크 결과창 써두기
 
+	
 //아이디 유효성 검사끝
  
    
@@ -142,6 +220,25 @@ if(userpw.value != userpw_re.value) {
 	}	   
  //휴대전화 정규식 끝  
    
+  //주소 정규식 시작
+    
+    const addr1 = joinForm.addr1;
+    const addr2 = joinForm.addr2;
+    const addr3 = joinForm.addr3;
+    
+    if(addr1.value == "") {
+    	alert("우편번호찾기를 해주세요.");
+    	return false;
+    }else if(addr2.value == "") {
+    	alert("주소를 적어주세요.");
+    	return false;
+    }else if(addr3.value == "") {
+    	alert("상세 주소를 적어주세요.")
+    	return false;
+    }
+    
+    
+    
 //이메일 정규식 시작
 	let regem = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
 	
@@ -158,8 +255,23 @@ if(userpw.value != userpw_re.value) {
 	
 //이메일 정규식 끝
    
-   
-   
+   //생일 정규식 시작
+	
+	var year=$("#birth-year option:selected").val()
+	var month=$("#birth-month option:selected").val()
+	var day=$("#birth-day option:selected").val()
+	
+	if(year=="출생 연도") {
+		alert("연도를 선택해주세요.");
+		return false;
+	}else if(month=="월"){
+		alert("월을 선택해주세요.")
+		return false;
+	}else if(day=="일") {
+		alert("일을 선택해주세요.")
+		return false;
+	}
+	  //생일 정규식 끝
    
    
    

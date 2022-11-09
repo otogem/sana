@@ -52,15 +52,25 @@
     margin: 5px 0px;
 }
 
-.main-user-line>div>#addr{
+.main-user-line>div>#user-id{
 	width:65%;
 }
 
-.main-user-line>div>#addr-bt{
+.main-user-line>div>#addrnum{
+	width:65%;
+}
+
+.main-user-line>div>.sub-bt{
 	width:25%;
 	cursor:pointer;
 }
 
+.main-user-line>select{
+	height: 40px;
+    border: 1px #ddd solid;
+    margin: 5px 0px;
+    width:32%;
+}
 
 .req{
 	margin: 2px;
@@ -76,7 +86,7 @@
 	color:red;
 	font-weight: bold;
 }
-/*비밀번호 확인용 css 시작*/
+/*비밀번호 확인용 css 끝*/
 
 #main-user-submit{
 	width: 100%;
