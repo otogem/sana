@@ -13,7 +13,7 @@
 	function kakaopost() {
 	    new daum.Postcode({
 	        oncomplete: function(data) {
-	            document.querySelector("#addr1").value = data.zonecode;
+	            document.querySelector("#addrnum").value = data.zonecode;
 	            document.querySelector("#addr2").value =  data.address
 	        }
 	    }).open();
@@ -63,7 +63,7 @@
 	      			<div class="main-user-line">	
 	    				<label for="addr1">주소<span class="req">*</span>:</label>
 	    					<div>
-		    					<input type="text" id="addrnum" id="addr1" name="addr1" placeholder="우편번호" readonly="readonly">
+		    					<input type="text" id="addrnum" name="addr1" placeholder="우편번호" readonly="readonly">
 		    				 	<input type="button" class="sub-bt" value="우편번호찾기" onclick="kakaopost()">
 	    				 	</div>
 	    				 <input type="text" id="addr2" name="addr2" placeholder="주소">
@@ -85,7 +85,7 @@
 						  </select>
     				</div>
     				<div class="main-user-line">
-						<input id="main-user-submit" type="submit" valuse="회원가입">
+						<button id="main-user-submit" type="submit">회원가입</button>
 					</div>
 					<script type="text/javascript" src="/resources/js/member/mbuser.js"></script>
 					</form>

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <section id="home_header">
 	<article class="nav">
 	<!-- 햄버거 버튼 -->
@@ -42,8 +42,16 @@
 					<a></a>
 					<div id="home_header_user">
 						<ul>
-							<li><a href="/member/mblogin">로그인</a></li>
-							<li><a href="/member/mbuser">회원 가입</a></li>
+						
+							<c:if test="${mbloginpost.id == null }">
+								<li><a href="/member/mblogin">로그인</a></li>
+								<li><a href="/member/mbuser">회원 가입</a></li>
+							</c:if>
+							
+							<c:if test="${mbloginpost.id != null }">
+								<li id="user-name">${sessionScope.mbloginpost.name }님</li>
+								<li><a href="/member/mbout">로그아웃</a></li>
+							</c:if>
 						</ul>
 					</div>
 				</li>

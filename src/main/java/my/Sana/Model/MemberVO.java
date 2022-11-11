@@ -2,7 +2,7 @@ package my.Sana.Model;
 
 public class MemberVO {
 	private String id;
-	private String Password;
+	private String password;
 	private String name;
 	private String nickname;
 	private String phone;
@@ -18,10 +18,10 @@ public class MemberVO {
 		this.id = id;
 	}
 	public String getPassword() {
-		return Password;
+		return password;
 	}
 	public void setPassword(String password) {
-		Password = password;
+		this.password = password;
 	}
 	public String getName() {
 		return name;
@@ -73,10 +73,11 @@ public class MemberVO {
 	}
 	@Override
 	public String toString() {
-		return "MemberVO [id=" + id + ", Password=" + Password + ", name=" + name + ", nickname=" + nickname
+		return "MemberVO [id=" + id + ", password=" + password + ", name=" + name + ", nickname=" + nickname
 				+ ", phone=" + phone + ", email=" + email + ", addr1=" + addr1 + ", addr2=" + addr2 + ", addr3=" + addr3
 				+ ", birth=" + birth + "]";
 	}
+	
 	
 	
 

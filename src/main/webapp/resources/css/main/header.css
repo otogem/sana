@@ -103,19 +103,21 @@ ul>li.cart{
 	color: black;
 }
 
-#home_header_user>ul>li{
-	cursor: pointer;
-}
-
-#home_header_user>ul>li:hover{
-	background-color: #fff2e1;
-	border-radius: 7px;
+#home_header_user>ul>li:not(:last-child){
+	border-bottom: 1px solid #949494;
 }
 
 #home_header_user>ul>li>a{
-	display: block;
-	padding: 15px 0px;
+		display: block;
+		padding: 15px 0px;
 }
+
+#home_header_user>ul>li>a:hover{
+	background-color: #fff2e1;
+	border-radius: 7px;
+	cursor: pointer;
+}
+
 /* 헤더 우측 파트 끝*/
 @media screen and (min-width:761px){/*데스크탑,태블릿은 아래의 설정 적용*/
 #home_header_center{

@@ -12,8 +12,8 @@ public class MemberServiceimpl implements MemberService{
 	@Autowired
 	MemberMapper mm;
 	
-	public void mblogin(MemberVO member) {
-		mm.mblogin(member);
+	public void mblogin(MemberVO member){
+		mm.mbloginpost(member);
 	}
 	
 	public void mbuser(MemberVO member) {

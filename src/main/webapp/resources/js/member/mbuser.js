@@ -7,13 +7,15 @@
 		$("#main-user-submit").attr("type","button");
 		const id = $("#user-id").val();
 		$.ajax({
-			type:"get",
-			async:false,
+			type:"POST",
+			dataType :'json',
 			url:"http://localhost:8080/member/idCheck",
 			data:{id: id},
-			success: function(data){
-				console.log(id)
-				if(data == 1) {
+			success: function(result){
+				console.log(result)
+				if(id=="") {
+					alert("아이디를 입력해주세요.")
+				}else if(result  == 1) {
 					alert("이미사용중인 ID입니다.");
 				}else {
 					alert("사용가능한 ID 입니다.")

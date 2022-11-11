@@ -13,6 +13,11 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+	
+	<!-- 로그인 세션 타임 30분으로 지정 -->
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
 
 	<!-- Processes application requests -->
 	<servlet>
