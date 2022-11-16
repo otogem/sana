@@ -20,9 +20,10 @@
 			<h1>TEST용</h1>
 			${mbloginpost.id }
 			${mbloginpost.password }
+			</c:if>
 			
-			
-			
+			<c:if test="${nickname ne null }">
+				<h1>드디어 성공</h1>
 			</c:if>
 			<c:if test="${mbloginpost.id == null }"> ${mbloginpost.id} 
 			두번째if

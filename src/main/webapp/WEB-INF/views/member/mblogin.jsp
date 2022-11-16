@@ -7,33 +7,6 @@
 <title>Home</title>
 	<jsp:include page="../main/maincss.jsp"></jsp:include>
 	<link href="../resources/css/member/mblogin.css" rel="stylesheet" type="text/css">
-	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-	<script>
-	document.cookie = "safeCookie1=foo; SameSite=Lax"; 
-	document.cookie = "safeCookie2=foo"; 
-	document.cookie = "crossCookie=bar; SameSite=None; Secure";
-		Kakao.init('c26c1ff17fda08700b4f1f7c7ddd050d'); //발급받은 키 중 javascript키를 사용해준다.
-		console.log(Kakao.isInitialized()); // sdk초기화여부판단
-		//카카오로그인
-		function kakaoLogin() {
-		    Kakao.Auth.login({
-		      success: function (response) {
-		        Kakao.API.request({
-		          url: '/v2/user/me',
-		          success: function (response) {
-		        	  console.log(response)
-		          },
-		          fail: function (error) {
-		            console.log(error)
-		          },
-		        })
-		      },
-		      fail: function (error) {
-		        console.log(error)
-		      },
-		    })
-		  }
-  	</script>
 </head>
 <body>
 <!-- 헤더 파트  -->
@@ -55,10 +28,11 @@
 					<div class="main-login-line">
 						<input id="main-login-button" type="submit" value="로그인">						
 					</div>
+				</form>
 					<div class="main-login-line">
 						<ul>
-							<li onclick="kakaoLogin();">
-						      <a href="javascript:void(0)">
+							<li>
+						      <a href="https://kauth.kakao.com/oauth/authorize?client_id=44daa6a53ff644904c893b155d273e0a&redirect_uri=http://localhost:8080/member/kakaolog&response_type=code">
 						          <img alt="카카오톡" src="/resources/image/login/kakao_login.png">
 						      </a>
 							</li>
@@ -67,7 +41,6 @@
 					<div class="main-login-line">
 						<span>네이버 로그인</span>
 					</div>
-				</form>
 				</div>
 			</div>
 		</section>

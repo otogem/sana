@@ -1,5 +1,7 @@
 package my.Sana.Controller;
 
+import java.util.HashMap;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -9,10 +11,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import my.Sana.Mapper.MemberMapper;
+import my.Sana.Model.KakaoDTO;
 import my.Sana.Model.MemberVO;
+import my.Sana.Service.KakaoMemberService;
 import my.Sana.Service.MemberService;
 
 @Controller
@@ -20,6 +25,8 @@ public class MemberController {
 	
 	@Autowired
 	MemberService ms;
+	@Autowired
+	KakaoMemberService kms;
 	@Autowired
 	MemberMapper mm;
 	
@@ -68,4 +75,21 @@ public class MemberController {
 		int result = mm.overID(id);
 		return result;
 	}
+	
+	//카카오 로그인
+	@RequestMapping(value="/member/kakaolog",method = RequestMethod.GET)
+	public String kakaoLogin(@RequestParam(value = "code", required = false)String code) throws Exception{
+		System.out.println("#########"+ code);//여기까지 system 에 코드 값떠오르면 성공
+		
+		String access_Token = kms.getAccessToken(code);
+		System.out.println("###access_Token :" + access_Token);
+		
+		KakaoDTO userInfo = kms.getUserInfo(access_Token);
+		
+		System.out.println("###access_Token#### : " + access_Token);
+//		System.out.println("###nickname#### : " + userInfo.get("nickname"));
+//		System.out.println("###email#### : " + userInfo.get("email"));
+		return "/home";
+	}
+
 }
