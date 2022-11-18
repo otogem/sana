@@ -7,6 +7,26 @@
 <title>Home</title>
 	<jsp:include page="../main/maincss.jsp"></jsp:include>
 	<link href="../resources/css/member/mblogin.css" rel="stylesheet" type="text/css">
+	
+	  <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+  <script>
+  //카카오로그인
+  function kakaoLogin() {
+
+    $.ajax({
+        url: '/login/getKakaoAuthUrl',
+        type: 'get',
+        async: false,
+        dataType: 'text',
+        success: function (res) {
+            location.href = res;
+        }
+    });
+
+  }
+
+  </script>
+  
 </head>
 <body>
 <!-- 헤더 파트  -->
@@ -30,13 +50,13 @@
 					</div>
 				</form>
 					<div class="main-login-line">
-						<ul>
-							<li>
-						      <a href="https://kauth.kakao.com/oauth/authorize?client_id=44daa6a53ff644904c893b155d273e0a&redirect_uri=http://localhost:8080/member/kakaolog&response_type=code">
-						          <img alt="카카오톡" src="/resources/image/login/kakao_login.png">
-						      </a>
-							</li>
-						</ul>
+						  <ul>
+						      <li onclick="kakaoLogin();">
+						        <a href="javascript:void(0)">
+						            <span> <img alt="카카오톡" src="/resources/image/login/kakao_login.png"></span>
+						        </a>
+						      </li>
+						  </ul>
 					</div>
 					<div class="main-login-line">
 						<span>네이버 로그인</span>

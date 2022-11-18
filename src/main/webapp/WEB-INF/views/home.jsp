@@ -21,9 +21,23 @@
 			${mbloginpost.id }
 			${mbloginpost.password }
 			</c:if>
+			<c:if test="${kakaoInfo != null}">
+			1
+			</c:if>
 			
-			<c:if test="${nickname ne null }">
-				<h1>드디어 성공</h1>
+			<c:if test="${nickname != null}">
+			2 ${nickname }
+			</c:if>
+			
+			
+			<c:if test="${kakaoInfo.nickname == null}">
+			3
+			</c:if>
+			
+			${access_Token }
+			
+			<c:if test="${kakaoInfo.nickname != null}">
+			4 ${kakaoInfo.nickname }
 			</c:if>
 			<c:if test="${mbloginpost.id == null }"> ${mbloginpost.id} 
 			두번째if

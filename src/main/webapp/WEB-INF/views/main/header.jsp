@@ -43,7 +43,7 @@
 					<div id="home_header_user">
 						<ul>
 						
-							<c:if test="${mbloginpost.id == null }">
+							<c:if test="${mbloginpost.id == null && kakaoInfo.nickname == null }">
 								<li><a href="/member/mblogin">로그인</a></li>
 								<li><a href="/member/mbuser">회원 가입</a></li>
 							</c:if>
@@ -51,6 +51,10 @@
 							<c:if test="${mbloginpost.id != null }">
 								<li id="user-name">${sessionScope.mbloginpost.name }님</li>
 								<li><a href="/member/mbout">로그아웃</a></li>
+							</c:if>
+							<c:if test="${kakaoInfo.nickname != null}">
+								<li id="user-name">${kakaoInfo.nickname }님</li>
+								<li><a href="https://kauth.kakao.com/oauth/logout?client_id=44daa6a53ff644904c893b155d273e0a&logout_redirect_uri=http://localhost:8080/logout">로그아웃</a></li>
 							</c:if>
 						</ul>
 					</div>
