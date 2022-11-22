@@ -25,6 +25,11 @@ li{
 	position: relative;
 	width: 100%;
 }
+
+#main-section{
+	width:100%;
+	margin-bottom: 30px;
+}
 /*공통 라인 끝*/
 
 #home_header{
@@ -120,6 +125,7 @@ ul>li.cart{
 
 /* 헤더 우측 파트 끝*/
 @media screen and (min-width:761px){/*데스크탑,태블릿은 아래의 설정 적용*/
+
 #home_header_center{
 	display: flex;
 }

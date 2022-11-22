@@ -24,7 +24,11 @@
     });
 
   }
-
+  document.cookie = "crossCookie=TIARA; SameSite=None; Secure";
+  document.cookie = "crossCookie=Kd_lang; SameSite=None; Secure";
+  document.cookie = "crossCookie=_ga; SameSite=None; Secure";
+  document.cookie = "crossCookie=_kdt; SameSite=None; Secure";
+  document.cookie = "crossCookie=_kadu; SameSite=None; Secure";
   </script>
   
 </head>
@@ -37,7 +41,7 @@
 		<section id="main-section">
 			<div id="main-login-box">
 				<div id="main-login">
-				<h1 id="main-login-title">TEST Login</h1>
+				<h1 id="main-login-title">SANA Login</h1>
 				<form action="/member/mblogin" method="POST" id="mbloginpost">
 					<div class="main-login-line">
 						<input class="main-input-box" id="id" name="id" type="text" placeholder="아이디를 입력해 주세요.">

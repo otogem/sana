@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+#main-section{
+	width:100%;
+	margin: 20px 0px 50px 0px;
+}
+
+#category-box{
+	width:80%;
+	max-width:900px;
+	margin: auto;
+	overflow: hidden;
+}
+
+@media screen and (max-width:760px){
+	#category-box{
+		width:90%;
+		margin: auto;
+	}
+}
+
+.category-sell-box{
+	width:250px;
+	display: inline-block;
+	border: 1px solid;
+	margin: 20px;
+}
+
+.category-sell-box>a>div{
+	text-align: center;
+}
+
+#category_button{ /*상품등록 버튼*/
+	padding:10px 15px 10px 15px;
+	background-color: #FFFFFF;
+	float:right;
+	display: block;	
+	border: #f8e6e0 2px solid;
+	border-radius:5px;
+}
+
+#category_button:hover{
+	background-color:#f8e6e0;
+}

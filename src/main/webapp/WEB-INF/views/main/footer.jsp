@@ -4,27 +4,27 @@
     <footer>
     	<div id="footer-cont">
     		<div id="footer-head">
-    			<div class="head-title">TEST</div>
+    			<div class="head-title">SANA</div>
     			
 	    		<ul class="sns-link">
 	    			<li>
 	    				<a href="https://ko-kr.facebook.com/" target="_black" title="facebook" class="sns1">
-	    				<span>TEST 페이스 북</span>
+	    				<span>SANA 페이스 북</span>
 	    				</a>
 	    			</li>
 	    			<li>
 	    				<a href="https://www.instagram.com/" target="_black" title="instagram" class="sns2">
-	    				<span>TEST 인스타 그램</span>
+	    				<span>SANA 인스타 그램</span>
 	    				</a>
 	    			</li>
 	    			<li>
 	    				<a href="https://twitter.com/?lang=ko" target="_black" title="twitter" class="sns3">
-	    				<span>TEST 트위터</span>
+	    				<span>SANA 트위터</span>
 	    				</a>
 	    			</li>
 	    			<li>
 	    				<a href="https://www.youtube.com/" target="_black" title="yotube" class="sns4">
-	    				<span>TEST 유튜브</span>
+	    				<span>SANA 유튜브</span>
 	    				</a>
 	    			</li>
 	    		</ul>

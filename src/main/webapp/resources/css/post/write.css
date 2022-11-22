@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+#main-section{
+	width:100%;
+	margin-bottom: 30px;
+}
+
+.service_sub_font{
+	font-size:24px;
+	font-weight:500;
+}
+
+#write-table{
+	width:80%;
+	max-width:900px;
+	margin: auto;
+}
+
+@media screen and (max-width:760px){
+	#write-table{
+		width:90%;
+		margin: auto;
+	}
+}
+
+#service_sub_content{
+	resize : none;
+}
+
+#uploadBtn{ /*글쓰기 버튼*/
+	padding:10px 15px 10px 15px;
+	background-color: #FFFFFF;
+	float:right;
+	display: block;	
+	border: #f8e6e0 2px solid;
+	border-radius:5px;
+}
+
+#uploadBtn:hover{
+	background-color:#f8e6e0;
+}

@@ -12,7 +12,7 @@
 	<!--  햄버거 버튼 끝 -->
 	
 	<!--  햄버거 메뉴 시작 -->
-		<div class="title"><a href="/">TEST</a></div>
+		<div class="title"><a href="/">SANA</a></div>
 	 		<div class="ham-con">
 
             <div class="navbar-nav">
@@ -25,12 +25,12 @@
 		<div class="ham-menu mt-5">
 		<ul id="home_header_center" class="ham-sub-menu">
 			<li><a href="/">HOME</a></li>
-			<li><a href="/">1번태그</a></li>
-			<li><a href="/">2번태그</a></li>
-			<li><a href="/">3번태그</a></li>
-			<li><a href="/">4번태그</a></li>
-			<li><a href="/">5번태그</a></li>
-			<li><a href="/">6번태그</a></li>
+			<li><a href="/goods/category?bgno=1">1category</a></li>
+			<li><a href="/goods/category?bgno=2">2category</a></li>
+			<li><a href="/goods/category?bgno=3">3category</a></li>
+			<li><a href="/goods/category?bgno=4">4category</a></li>
+			<li><a href="/goods/category?bgno=5">5category</a></li>
+			<li><a href="/goods/category?bgno=6">6category</a></li>
 		</ul>
 		</div>
 		</div>

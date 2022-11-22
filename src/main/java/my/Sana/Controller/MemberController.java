@@ -1,12 +1,6 @@
 package my.Sana.Controller;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.net.HttpURLConnection;
-import java.net.URL;
+
 import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,10 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 
 import my.Sana.Mapper.MemberMapper;
 import my.Sana.Model.MemberVO;
@@ -104,8 +94,10 @@ public class MemberController {
 	@RequestMapping(value = "/member/kakaolog")
 	public String oauthKakao(
 			@RequestParam(value = "code", required = false) String code
-			, Model model, HttpSession session) throws Exception {
-
+			, Model model,HttpServletRequest request) throws Exception {
+		
+		HttpSession session = request.getSession();
+		
 		System.out.println("#########" + code);
         String access_Token = msi.getAccessToken(code);
         System.out.println("###access_Token#### : " + access_Token);
@@ -130,7 +122,7 @@ public class MemberController {
     @RequestMapping(value="/logout")
     public String logout(HttpSession session) {
         String access_Token = (String)session.getAttribute("access_Token");
-
+        
         if(access_Token != null && !"".equals(access_Token)){
             msi.kakaoLogout(access_Token);
             session.removeAttribute("access_Token");

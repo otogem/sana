@@ -132,7 +132,6 @@ public class MemberServiceimpl implements MemberService{
 		            userInfo.put("nickname", nickname);
 
 		        } catch (IOException e) {
-		            // TODO Auto-generated catch block
 		            e.printStackTrace();
 		        }
 
@@ -160,7 +159,6 @@ public class MemberServiceimpl implements MemberService{
 		            }
 		            System.out.println(result);
 		        } catch (IOException e) {
-		            // TODO Auto-generated catch block
 		            e.printStackTrace();
 		        }
 		    }
