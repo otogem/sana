@@ -4,15 +4,15 @@
 	const loginForm = document.loginForm;
    	
 	function join() {
-	const id = loginForm.id;
-	const password = loginForm.password;
-	
+    const id = $("#id").val();
+    const password = $("#password").val();
+
    //비밀번호 유효성 검사 시작
-   if(id.value == "") {
+   if(id == "") {
 	   alert("아이디를 입력해주세요.");
 	   id.focus();
 	   return false;
-   }else if(password.value == "") {
+   }else if(password == "") {
 	   alert("비밀번호를 입력해주세요.");
 	   password.focus();
 	   return false;

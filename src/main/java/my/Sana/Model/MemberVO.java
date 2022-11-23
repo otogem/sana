@@ -11,8 +11,7 @@ public class MemberVO {
 	private String addr2;
 	private String addr3;
 	private String birth;
-	public int logincheck;
-
+	
 	public String getId() {
 		return id;
 	}

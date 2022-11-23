@@ -15,7 +15,9 @@
 	<!-- 헤더 파트 끝 -->
 	
 	<div id="wrap">
-				<c:choose>
+		<section id="main-section">
+			
+			<c:choose>
 			     <c:when test="${detail.id==sessionScope.mbloginpost.id || sessionScope.mbloginpost.id=='admin'}">
 								<a href="/service/modify?bno=${detail.bno }&bgno=${detail.bgno}" class="goods_detail_button" style="cursor: pointer">수정 하러 하기</a>
 					</c:when>
@@ -25,7 +27,8 @@
 			 		<input class="goods_detail_button" type="submit" value="삭제 하기" style="cursor: pointer"  onclick="alert('삭제되었습니다.')" formaction="/service/remove">
 				 </c:when>
 			 </c:choose>
-		<section id="main-section">
+			 
+			
 			<div id="detail-box">
 				<div>
 					<input type="hidden" name="bno" value="${detail.bno}">
