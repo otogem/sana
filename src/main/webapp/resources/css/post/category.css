@@ -12,11 +12,20 @@
 	overflow: hidden;
 }
 
-@media screen and (max-width:760px){
+@media screen and (max-width:768px){
 	#category-box{
-		width:90%;
+		width:600px;
 		margin: auto;
 	}
+}
+
+#category-max-div{
+	font-size: 24px;
+	font-weight: 500;
+}
+
+#category-max-num{
+	color: #F8CE47;
 }
 
 .category-sell-box{

@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+#main-section{
+	width:100%;
+	margin: 20px 0px 50px 0px;
+}
+
+#detail-box{
+	width:80%;
+	max-width:900px;
+	margin: auto;
+	overflow: hidden;
+}
+
+@media screen and (max-width:768px){
+	#detail-box{
+		width:600px;
+		margin: auto;
+	}
+}
+
+/* 수정 삭제 버튼*/
+.goods_detail_button{
+	text-decoration:none;
+	padding:7px;
+	background-color: #FFFFFF;
+	border: #f8e6e0 2px solid;
+	border-radius:5px;
+	float:right;
+	margin-left:5px; 
+	width:110px;
+	height: 45px;
+	font-size: 17px;
+	color: black;
+}
+
+.goods_detail_button:hover{
+	background-color: #f8e6e0;
+}
+
+#detail-main-box{
+	float: left;
+    text-align: center;
+    width: 430px;
+    margin-left: 10px;
+}
+
+#detail-sub-box{
+	float: right;
+    width: 440px;
+}

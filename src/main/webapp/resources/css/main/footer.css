@@ -90,7 +90,7 @@ footer{
 	display: inline-block;
 }
 
-@media screen and (min-width:761px){
+@media screen and (min-width:768px){
 #footer-util>ul>li:not(:last-child)::after{
 	display: inline-block;
     width: 1px;
@@ -124,7 +124,7 @@ footer{
 	display: inline-block;
 }
 
-@media screen and (min-width:761px){
+@media screen and (min-width:768px){
 #footer-coll>li:not(:last-child)::after{
 	display: inline-block;
     width: 1px;

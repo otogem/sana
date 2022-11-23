@@ -1,10 +1,13 @@
 package my.Sana.Controller;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import my.Sana.Model.PostPageSubVO;
 import my.Sana.Model.PostPageVO;
@@ -58,6 +61,7 @@ public class PostController {
 		}
 		//model.addAttribute("list",ss.list(bgno,ppa));
 		int total=ps.total(ppa);
+		model.addAttribute("list",ps.list(ppa));
 		model.addAttribute("paging",new PostPageSubVO(ppa,total));
 		return path;
 	}
@@ -90,10 +94,39 @@ public class PostController {
 		return writepath;
 	}
 	
+	@RequestMapping(value="/goods/detail", method = RequestMethod.GET)
+	public String detail(PostVO post,Model model) {
+		System.out.println(post);
+		model.addAttribute("detail",ps.detail(post));
+		return "/postgoods/detail";
+	}
 	
-	//위에까지 페이지별 주소 설정
-	
-	//아래부터 1~6페이지 상품 번호 글 쓰기
-	
-	//아래부터 고객센터 
+	/* 게시글 삭제 */
+	@RequestMapping(value="/service/remove",method = RequestMethod.POST)
+	public String remove(int bno,PostVO post,RedirectAttributes rttr) {
+		String removepath="";
+//		ArrayList<ServiceFileListVO> filelist = ps.filelist(bno);
+		System.out.println(bno+"번 게시글 삭제");
+		if(ps.remove(bno)) {
+			//deleteFiles(filelist);
+			rttr.addFlashAttribute("result", "success");
+		}
+		//비즈니스 영역 연결한 후 PostService 에 있는 write메소드
+		if(post.getBgno()==1) {// 만약에 bgno가 1이면
+					// 공지사항(service/notice)
+					removepath="redirect:/goods/category?bgno=1";
+			}else if(post.getBgno()==2) {	// 만약에 bgno가 2이면
+					removepath="redirect:/goods/category?bgno=2";
+			}else if(post.getBgno()==3){// 그렇지 않으면
+					removepath="redirect:/goods/category?bgno=3";
+			}else if(post.getBgno()==4){// 그렇지 않으면
+					removepath="redirect:/goods/category?bgno=4";
+			}else if(post.getBgno()==5){// 그렇지 않으면
+					removepath="redirect:/goods/category?bgno=5";
+			}else if(post.getBgno()==6){// 그렇지 않으면
+					removepath="redirect:/goods/category?bgno=6";
+			}
+		
+		return removepath;
+	}
 }

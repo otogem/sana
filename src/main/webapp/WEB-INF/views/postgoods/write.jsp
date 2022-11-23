@@ -20,9 +20,9 @@
 			
 			<form id="form" role="form" method="post">
 			<table id="write-table">
-				<tr><td><input type="hidden" name="id" value="${sessionScope.mbloginpost.id}"></td></tr>
-				<tr><td><input type="hidden" name="name" value="${sessionScope.mbloginpost.name}"></td></tr>
-				<tr><td><input type="hidden" name="bgno" value="${bgno}"></td></tr>
+				<tr><td><input type="text" name="id" value="${sessionScope.mbloginpost.id}"></td></tr>
+				<tr><td><input type="text" name="name" value="${sessionScope.mbloginpost.name}"></td></tr>
+				<tr><td><input type="text" name="bgno" value="${bgno}"></td></tr>
 				<tr><td class="service_sub_font">상품이름</td></tr>
 				<tr><td><input type="text" name="title" style="width:100%" class="service_sub_font"></td></tr>
 				

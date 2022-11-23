@@ -15,4 +15,8 @@ public interface PostService {
 	public ArrayList<PostVO> list(PostPageVO ppa);
 	//각 페이지별  전체 건수 설계
 	public int total(PostPageVO ppa);
+	//글 상세 내용 보기 설계
+	public PostVO detail(PostVO post);
+	//글 삭제
+	public boolean remove(int bno);
 }

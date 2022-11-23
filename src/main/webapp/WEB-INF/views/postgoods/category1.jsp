@@ -18,15 +18,14 @@
 		<section id="main-section">
 			<div id="category-box">
 			
-				<div>총:${writePost.rownum} 건</div>
-			
-				<div>총:${category.rownum} 건</div>
+				<div id="category-max-div">총:<span id="category-max-num"> ${list[0].rownum } </span> 건 </div>
 				<div id="category-box-sub">
 					<c:forEach items="${list }" var="category">
-						<div class="category-sell-box"><a href="category/detail?bno=${category.bno }&bgno=1">
+						<div class="category-sell-box"><a href="detail?bno=${category.bno }&bgno=1">
 							<input type="hidden" name="bno" value="${category.bno}">
-							<input type="hidden" name="bno" value="${category.bgno}">
-							<input type="hidden" name="bno" value="${category.cnt}">																
+							<input type="hidden" name="bgno" value="${category.bgno}">
+							<input type="hidden" name="cnt" value="${category.cnt}">	
+							<input type="text" name="id" value="${category.id}">																
 							<div><strong>${category.title }</strong></div>
 							<div><p>${category.price }원</p></div>
 							<div>	<fmt:parseDate value="${category.regdate}" var="regdate" pattern="yyyy-MM-dd HH:mm:ss" />

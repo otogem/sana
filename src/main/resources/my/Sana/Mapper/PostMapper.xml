@@ -10,7 +10,7 @@
 			from goodslist
 		</selectKey>
 		
-	  insert into goodslist(bno,title,id,content,price,bgno,name)
+	  insert into goodslist(bno,title,content,id,price,bgno,name)
       values(#{bno},#{title},#{content},#{id},#{price},#{bgno},#{name})
 	</insert>
 	
@@ -65,5 +65,20 @@
 				    </otherwise>				    	
 			 </choose>
 		</if>
-   </select>
+	   </select>
+	   
+	   	   <select id="detail" resultType="my.Sana.Model.PostVO">
+		      select*from goodslist where bno=#{bno}
+		   </select>
+		   
+		   <update id="cntup">
+		   		update goodslist
+		   		set cnt=cnt+1
+		   		where bno = ${bno}
+		   </update>
+		   
+		   	<delete id="remove">
+				delete from goodslist
+				where bno=#{bno}
+			</delete>
 </mapper>

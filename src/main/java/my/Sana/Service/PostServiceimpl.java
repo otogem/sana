@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import my.Sana.Mapper.PostMapper;
 import my.Sana.Model.PostPageVO;
@@ -30,5 +31,20 @@ public class PostServiceimpl implements PostService{
 	//total 추상메서드 구현
 	public int total(PostPageVO ppa) {
 		return pm.total(ppa);
+	}
+	
+	//detail 추상메서드 구현
+	@Transactional
+	public PostVO detail(PostVO post) {
+		//1회 조회할 때마다 리스트 에서 조회수 +1 증가
+		pm.cntup(post);
+		return pm.detail(post);
+	}
+	
+	//remove 첨부파일 삭제용 추상메서드 구현
+	public boolean remove(int bno) {
+		System.out.println("첨부 파일 삭제 게시글 번호:"+ bno);
+		
+		return pm.remove(bno);
 	}
 }

@@ -7,7 +7,6 @@
 <title>Home</title>
 	<jsp:include page="../main/maincss.jsp"></jsp:include>
 	<link href="../resources/css/member/mblogin.css" rel="stylesheet" type="text/css">
-	
 	  <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
   <script>
   //카카오로그인
@@ -38,11 +37,12 @@
 	<script type="text/javascript" src="/resources/js/main/header.js"></script>
 <!-- 헤더 파트 끝 -->
 	<div id="wrap">
+	<input type="text" value="아이디:${mbloginpost.id}">
 		<section id="main-section">
 			<div id="main-login-box">
 				<div id="main-login">
 				<h1 id="main-login-title">SANA Login</h1>
-				<form action="/member/mblogin" method="POST" id="mbloginpost">
+				<form action="/member/mblogin" method="POST" id="mbloginpost" name="loginForm" onsubmit="return join();">
 					<div class="main-login-line">
 						<input class="main-input-box" id="id" name="id" type="text" placeholder="아이디를 입력해 주세요.">
 					</div>
@@ -52,12 +52,14 @@
 					<div class="main-login-line">
 						<input id="main-login-button" type="submit" value="로그인">						
 					</div>
-				</form>
+				</form> 
+					  <script type="text/javascript" src="/resources/js/member/mblogin.js"></script>
 					<div class="main-login-line">
 						  <ul>
 						      <li onclick="kakaoLogin();">
 						        <a href="javascript:void(0)">
-						            <span> <img alt="카카오톡" src="/resources/image/login/kakao_login.png"></span>
+						            <span> <img id="kakao-img-logn" alt="카카오톡" src="/resources/image/login/kakao_login.png"></span>
+						            <span> <img id="kakao-img-logn-small" alt="카카오톡" src="/resources/image/login/kakao_login_small.png"></span>
 						        </a>
 						      </li>
 						  </ul>

@@ -9,7 +9,7 @@
 	min-width: 300px;
 }
 
-@media screen and (max-width:761px){
+@media screen and (max-width:768px){
 	#main-user-box{
 	max-width: 740px;
 	min-width: 300px;
@@ -23,7 +23,7 @@
 	border-radius: 10px;
 }
 
-@media screen and (max-width:761px){
+@media screen and (max-width:768px){
 	#main-user{
 	margin: 50px 10px 100px;
 	padding: 20px 20px;

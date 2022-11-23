@@ -8,10 +8,13 @@ import javax.servlet.http.HttpSession;
 
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -49,6 +52,17 @@ public class MemberController {
 			session.setAttribute("mblogin", null);
 			return "redirect:/member/mblogin";
 		}
+	}
+	
+	//로그인 체크
+	@PostMapping("/member/logincheck")
+	public ResponseEntity<String> logincheck(@RequestBody MemberVO member){
+		System.out.println(member);
+		int result = ms.logincheck(member);
+		System.out.println("result 결과:"+result);
+		
+		return result == 1 ?new ResponseEntity<>("success",HttpStatus.OK)
+						   :new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 	
 	//로그아웃

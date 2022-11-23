@@ -14,14 +14,14 @@
 #main-login{
 	border: solid 1px #c0c0c0;
 	margin: 50px 10px 300px;
-	padding: 20px 100px;
+	padding: 20px 110px;
 	border-radius: 10px;
 }
 
-@media screen and (max-width:761px){
+@media screen and (max-width:768px){
 	#main-login{
 	margin: 50px 10px 100px;
-	padding: 20px 20px;
+	padding: 20px 110px;
 	}
 }
 
@@ -55,4 +55,23 @@
 
 #main-login-button:hover{
 	background-color: #c0c0c0;
+}
+
+#kakao-img-logn{
+	width:100%;
+	display: blcok;
+}
+#kakao-img-logn-small{
+	display: none;
+}
+
+@media screen and (max-width:470px){
+
+	#kakao-img-logn{
+	display: none;
+	}
+	
+	#kakao-img-logn-small{
+		display: block;
+	}
 }

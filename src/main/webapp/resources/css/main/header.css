@@ -124,7 +124,7 @@ ul>li.cart{
 }
 
 /* 헤더 우측 파트 끝*/
-@media screen and (min-width:761px){/*데스크탑,태블릿은 아래의 설정 적용*/
+@media screen and (min-width:768px){/*데스크탑,태블릿은 아래의 설정 적용*/
 
 #home_header_center{
 	display: flex;

@@ -10,4 +10,5 @@ public interface MemberMapper {
 	public MemberVO mbloginpost(MemberVO member);
 	public void mbuser(MemberVO member);
 	public int overID(String id);
+	public int logincheck(MemberVO member);
 }

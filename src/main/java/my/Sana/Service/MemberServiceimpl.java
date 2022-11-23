@@ -34,6 +34,11 @@ public class MemberServiceimpl implements MemberService{
 		mm.mbuser(member);
 	}
 	
+	public int logincheck(MemberVO member) {
+		System.out.println(member);
+		return mm.logincheck(member);
+	}
+	
 	  //토큰발급
 			public String getAccessToken (String authorize_code) {
 		        String access_Token = "";
