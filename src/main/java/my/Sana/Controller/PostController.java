@@ -22,44 +22,44 @@ public class PostController {
 	
 	//게시판 글쓰기 페이지(화면)
 	@RequestMapping(value = "/goods/write", method = RequestMethod.GET)
-	public String write(int bgno,Model model) {
-		System.out.println(bgno);
-		model.addAttribute("bgno", bgno);
+	public String write(int category_number,Model model) {
+		System.out.println(category_number);
+		model.addAttribute("category_number", category_number);
 		return "postgoods/write";
 	}
 	
-	//각페이지별 bgno 각페이지별로 부여 이동
+	//각페이지별 category_number 각페이지별로 부여 이동
 	//확장을 가능성을 남겨두기위해 50번까진 카테고리 한테 그이후를 백엔드쪽페이지로 넘김
 	@RequestMapping(value = "/goods/category", method = RequestMethod.GET)
 	public String writepage(Model model,PostPageVO ppa) {
 		String path="";
-		if(ppa.getBgno()==1) {// 만약에 bgno가 1이면
+		if(ppa.getCategory_number()==1) {// 만약에 category_number가 1이면
 			// 공지사항(post/notice)
 			model.addAttribute("list",ps.list(ppa));
 			path="postgoods/category1"; // category1
-		}else if(ppa.getBgno()==2) {	// 만약에 bgno가 2이면
+		}else if(ppa.getCategory_number()==2) {	// 만약에 category_number가 2이면
 			model.addAttribute("list",ps.list(ppa));
 			path="postgoods/category2";// category2
-		}else if(ppa.getBgno()==3) {	// 만약에 bgno가 3이면
+		}else if(ppa.getCategory_number()==3) {	// 만약에 category_number가 3이면
 			model.addAttribute("list",ps.list(ppa));
 			path="postgoods/category3";// category3
-		}else if(ppa.getBgno()==4) {	// 만약에 bgno가 4이면
+		}else if(ppa.getCategory_number()==4) {	// 만약에 category_number가 4이면
 			model.addAttribute("list",ps.list(ppa));
 			path="postgoods/category4";// category4
-		}else if(ppa.getBgno()==5) {	// 만약에 bgno가 5이면
+		}else if(ppa.getCategory_number()==5) {	// 만약에 category_number가 5이면
 			model.addAttribute("list",ps.list(ppa));
 			path="postgoods/category5";// category5
-		}else if(ppa.getBgno()==6) {	// 만약에 bgno가 6이면
+		}else if(ppa.getCategory_number()==6) {	// 만약에 category_number가 6이면
 			model.addAttribute("list",ps.list(ppa));
 			path="postgoods/category6";// category6
-		}else if(ppa.getBgno()==7) {	// 만약에 bgno가 7이면
+		}else if(ppa.getCategory_number()==7) {	// 만약에 category_number가 7이면
 			model.addAttribute("list",ps.list(ppa));
 			path="postgoods/category";// category
 		}else {// 그렇지 않으면
 			model.addAttribute("list",ps.list(ppa));
 			path="/";// 홈
 		}
-		//model.addAttribute("list",ss.list(bgno,ppa));
+		//model.addAttribute("list",ss.list(category_number,ppa));
 		int total=ps.total(ppa);
 		model.addAttribute("list",ps.list(ppa));
 		model.addAttribute("paging",new PostPageSubVO(ppa,total));
@@ -72,20 +72,20 @@ public class PostController {
 	String writepath="";
 	System.out.println(post);
 	//비즈니스 영역 연결한 후 postpost 에 있는 write메소드
-	if(post.getBgno()==1) {// 만약에 bgno가 1이면
-		writepath="redirect:/goods/category?bgno=1"; //test catecori 1
-	}else if(post.getBgno()==2) {	// 만약에 bgno가 2이면
-		writepath="redirect:/goods/category?bgno=2";// test catecori 2
-	}else if(post.getBgno()==3){ 	// 만약에 bgno가 3이면
-		writepath="redirect:/goods/category?bgno=3";// test catecori 3
-	}else if(post.getBgno()==4) {	// 만약에 bgno가 4이면
-		writepath="redirect:/goods/category?bgno=4";// test catecori 4
-	}else if(post.getBgno()==5) {	// 만약에 bgno가 5이면
-		writepath="redirect:/goods/category?bgno=5";// test catecori 5
-	}else if(post.getBgno()==6) {	// 만약에 bgno가 6이면 
-		writepath="redirect:/goods/category?bgno=6";// test catecori 6
-	}else if(post.getBgno()==7) {	// 만약에 bgno가 7이면
-		writepath="redirect:/goods/bkind?bgno=7";// test 고객센터
+	if(post.getCategory_number()==1) {// 만약에 category_number가 1이면
+		writepath="redirect:/goods/category?category_number=1"; //test catecori 1
+	}else if(post.getCategory_number()==2) {	// 만약에 category_number가 2이면
+		writepath="redirect:/goods/category?category_number=2";// test catecori 2
+	}else if(post.getCategory_number()==3){ 	// 만약에 category_number가 3이면
+		writepath="redirect:/goods/category?category_number=3";// test catecori 3
+	}else if(post.getCategory_number()==4) {	// 만약에 category_number가 4이면
+		writepath="redirect:/goods/category?category_number=4";// test catecori 4
+	}else if(post.getCategory_number()==5) {	// 만약에 category_number가 5이면
+		writepath="redirect:/goods/category?category_number=5";// test catecori 5
+	}else if(post.getCategory_number()==6) {	// 만약에 category_number가 6이면 
+		writepath="redirect:/goods/category?category_number=6";// test catecori 6
+	}else if(post.getCategory_number()==7) {	// 만약에 category_number가 7이면
+		writepath="redirect:/goods/bkind?category_number=7";// test 고객센터
 	}else{
 		writepath="redirect:/";
 	}
@@ -94,6 +94,7 @@ public class PostController {
 		return writepath;
 	}
 	
+	/*상품 상세페이지*/
 	@RequestMapping(value="/goods/detail", method = RequestMethod.GET)
 	public String detail(PostVO post,Model model) {
 		System.out.println(post);
@@ -101,32 +102,66 @@ public class PostController {
 		return "/postgoods/detail";
 	}
 	
-	/* 게시글 삭제 */
-	@RequestMapping(value="/service/remove",method = RequestMethod.POST)
-	public String remove(int bno,PostVO post,RedirectAttributes rttr) {
+	/* 상품 삭제 */
+	@RequestMapping(value="/goods/remove",method = RequestMethod.POST)
+	public String remove(int product_number,PostVO post,RedirectAttributes rttr) {
 		String removepath="";
-//		ArrayList<ServiceFileListVO> filelist = ps.filelist(bno);
-		System.out.println(bno+"번 게시글 삭제");
-		if(ps.remove(bno)) {
+//		ArrayList<ServiceFileListVO> filelist = ps.filelist(product_number);
+		System.out.println(product_number+"번 게시글 삭제");
+		if(ps.remove(product_number)) {
 			//deleteFiles(filelist);
 			rttr.addFlashAttribute("result", "success");
 		}
 		//비즈니스 영역 연결한 후 PostService 에 있는 write메소드
-		if(post.getBgno()==1) {// 만약에 bgno가 1이면
+		if(post.getCategory_number()==1) {// 만약에 bgno가 1이면
 					// 공지사항(service/notice)
-					removepath="redirect:/goods/category?bgno=1";
-			}else if(post.getBgno()==2) {	// 만약에 bgno가 2이면
-					removepath="redirect:/goods/category?bgno=2";
-			}else if(post.getBgno()==3){// 그렇지 않으면
-					removepath="redirect:/goods/category?bgno=3";
-			}else if(post.getBgno()==4){// 그렇지 않으면
-					removepath="redirect:/goods/category?bgno=4";
-			}else if(post.getBgno()==5){// 그렇지 않으면
-					removepath="redirect:/goods/category?bgno=5";
-			}else if(post.getBgno()==6){// 그렇지 않으면
-					removepath="redirect:/goods/category?bgno=6";
+					removepath="redirect:/goods/category?category_number=1";
+			}else if(post.getCategory_number()==2) {	// 만약에 bgno가 2이면
+					removepath="redirect:/goods/category?category_number=2";
+			}else if(post.getCategory_number()==3){// 그렇지 않으면
+					removepath="redirect:/goods/category?category_number=3";
+			}else if(post.getCategory_number()==4){// 그렇지 않으면
+					removepath="redirect:/goods/category?category_number=4";
+			}else if(post.getCategory_number()==5){// 그렇지 않으면
+					removepath="redirect:/goods/category?category_number=5";
+			}else if(post.getCategory_number()==6){// 그렇지 않으면
+					removepath="redirect:/goods/category?category_number=6";
 			}
 		
 		return removepath;
 	}
+	
+	//상품 수정 받기
+	@RequestMapping(value = "/goods/modify", method = RequestMethod.GET)
+	public String getmodify(PostVO post,Model model) {
+		model.addAttribute("detail",ps.detail(post));
+		return "/postgoods/modify";
+	}
+	
+	/* 상품 수정 보내기*/
+    @RequestMapping(value = "/goods/modify", method =  RequestMethod.POST )
+    public String postmodify(PostVO post,RedirectAttributes rttr) {		
+    System.out.println(post);
+   	String path="";
+	String modipath="";
+	if(post.getCategory_number()==1) {// 만약에 bgno가 1이면
+			// 공지사항(service/notice)
+		modipath="redirect:/service/bkind?category_number=1";
+	}else if(post.getCategory_number()==2) {	// 만약에 bgno가 2이면
+		modipath="redirect:/service/bkind?category_number=2";// faq 첫번찌 탭
+	}else if(post.getCategory_number()==4) {	// 만약에 bgno가 4이면
+		modipath="redirect:/service/bkind?category_number=4";// faq 두번찌 탭
+	}else if(post.getCategory_number()==5) {	// 만약에 bgno가 5이면
+		modipath="redirect:/service/bkind?category_number=5";// faq 세번찌 탭
+	}else if(post.getCategory_number()==6) {	// 만약에 bgno가 6이면 
+		modipath="redirect:/service/bkind?category_number=6";// faq 네번찌 탭
+	}else if(post.getCategory_number()==7) {	// 만약에 bgno가 7이면
+		modipath="redirect:/service/bkind?category_number=7";// faq 다섯번찌 탭
+	}else {// 그렇지 않으면
+		modipath="redirect:/service/bkind?category_number=3";// 1:1문즤
+	}
+       ps.modify(post);
+       rttr.addAttribute("detail",post.getCategory_number());
+       return modipath;
+    }
 }

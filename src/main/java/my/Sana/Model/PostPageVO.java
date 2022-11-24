@@ -5,7 +5,7 @@ public class PostPageVO {
 	private int amount; 	//한 페이지당 게시물 갯수
 	private String keyword; //키워드를 통해 검색.
 	private String type; 	//키워드 기준
-	private int bgno;
+	private int category_number;
 	
 	
 	//생성자
@@ -40,17 +40,18 @@ public class PostPageVO {
 	public void setType(String type) {
 		this.type = type;
 	}
-	public int getBgno() {
-		return bgno;
+	public int getCategory_number() {
+		return category_number;
 	}
-	public void setBgno(int bgno) {
-		this.bgno = bgno;
+	public void setCategory_number(int category_number) {
+		this.category_number = category_number;
 	}
 	@Override
 	public String toString() {
 		return "PostPageVO [pageNum=" + pageNum + ", amount=" + amount + ", keyword=" + keyword + ", type=" + type
-				+ ", bgno=" + bgno + "]";
+				+ ", category_number=" + category_number + "]";
 	}
+
 	
 	
 }

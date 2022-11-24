@@ -24,13 +24,13 @@
 	<div id="ham-menu wrap">
 		<div class="ham-menu mt-5">
 		<ul id="home_header_center" class="ham-sub-menu">
-			<li><a href="/">HOME</a></li>
-			<li><a href="/goods/category?bgno=1">1category</a></li>
-			<li><a href="/goods/category?bgno=2">2category</a></li>
-			<li><a href="/goods/category?bgno=3">3category</a></li>
-			<li><a href="/goods/category?bgno=4">4category</a></li>
-			<li><a href="/goods/category?bgno=5">5category</a></li>
-			<li><a href="/goods/category?bgno=6">6category</a></li>
+			<li><a href="/">HOME</a></li> 
+			<li><a href="/goods/category?category_number=1">1category</a></li>
+			<li><a href="/goods/category?category_number=2">2category</a></li>
+			<li><a href="/goods/category?category_number=3">3category</a></li>
+			<li><a href="/goods/category?category_number=4">4category</a></li>
+			<li><a href="/goods/category?category_number=5">5category</a></li>
+			<li><a href="/goods/category?category_number=6">6category</a></li>
 		</ul>
 		</div>
 		</div>

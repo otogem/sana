@@ -37,7 +37,6 @@
 	<script type="text/javascript" src="/resources/js/main/header.js"></script>
 <!-- 헤더 파트 끝 -->
 	<div id="wrap">
-	<input type="text" value="아이디:${mbloginpost.id}">
 		<section id="main-section">
 			<div id="main-login-box">
 				<div id="main-login">

@@ -5,13 +5,13 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="my.Sana.Mapper.PostMapper">
 	<insert id="write">
-		<selectKey keyProperty="bno" order="BEFORE" resultType="int">
-			select ifnull(max(bno)+1,1)bno
+		<selectKey keyProperty="product_number" order="BEFORE" resultType="int">
+			select ifnull(max(product_number)+1,1)product_number
 			from goodslist
 		</selectKey>
 		
-	  insert into goodslist(bno,title,content,id,price,bgno,name)
-      values(#{bno},#{title},#{content},#{id},#{price},#{bgno},#{name})
+	  insert into goodslist(product_number,product_name,product_desc,product_price,category_number,product_stock)
+      values(#{product_number},#{product_name},#{product_desc},#{product_price},#{category_number},#{product_stock})
 	</insert>
 	
 	<!-- goods-category 리스트 -->
@@ -19,13 +19,14 @@
 		select * from(
         select *, @rownum:=@rownum+1 num from(
         select
-        @row_no:=IF(@prev_val =b.bgno,@row_no+1,1)AS 
-        rownum,@prev_val := b.bgno as bgno,title,content,regdate,cnt,id,name,bno,price
+        @row_no:=IF(@prev_val =b.category_number,@row_no+1,1)AS 
+        rownum,@prev_val := b.category_number as category_number,product_number,product_name,product_stock,product_price,product_desc
+        ,product_cnt,product_date
 		from goodslist b,
         (select @rownum :=0)z,
         (select @row_no := 0)x,
         (select @prev_val :='')y
-        where BGNO=#{bgno}
+        where category_number=#{category_number}
 			<if test="keyword !=null">
 				<choose>
 					<when test="type == 'T'.toString()">
@@ -50,7 +51,7 @@
 			
 	   <select id="total" resultType="int">
    		select count(*) from goodslist
-   		where BGNO=#{bgno}
+   		where category_number=#{category_number}
    		<if test="keyword !=null">
 			 <choose>
 				    <when test="type == 'T'.toString()">
@@ -68,17 +69,25 @@
 	   </select>
 	   
 	   	   <select id="detail" resultType="my.Sana.Model.PostVO">
-		      select*from goodslist where bno=#{bno}
+		      select*from goodslist where product_number=#{product_number}
 		   </select>
 		   
 		   <update id="cntup">
 		   		update goodslist
-		   		set cnt=cnt+1
-		   		where bno = ${bno}
+		   		set product_cnt=product_cnt+1
+		   		where product_number = ${product_number}
 		   </update>
+		   
+		   <update id="modify">
+		   update goodslist
+			   set product_name=#{product_name},
+				   product_desc=#{product_desc}
+		   where product_number=#{product_number}
+		   </update>
+		   
 		   
 		   	<delete id="remove">
 				delete from goodslist
-				where bno=#{bno}
+				where product_number=#{product_number}
 			</delete>
 </mapper>

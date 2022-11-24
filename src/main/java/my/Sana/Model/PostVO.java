@@ -3,99 +3,83 @@ package my.Sana.Model;
 public class PostVO {
 	//가상번호(rownum)
 	private int rownum;
-	//게시판번호(bno)
-	private int bno;
-	//제목(title)
-	private String title;
-	//내용(content)
-	private String content;
-	//작성일자(regdate)
-	private String regdate;
-	//조회수(cnt)
-	private int cnt;
-	//아이디(id)
-	private String id;
-	//게시판 분류(BGNO)
-	private int bgno;
-	//가격(price)
-	private int price;
-	//상품등록이미지
-	private String image;
-	//이름(name)
-	private String name;
-	
-	
-	public int getPrice() {
-		return price;
-	}
-	public void setPrice(int price) {
-		this.price = price;
-	}
-	public String getImage() {
-		return image;
-	}
-	public void setImage(String image) {
-		this.image = image;
-	}
+	//상품번호(product_number)
+	private int product_number;
+	//제목(product_name)
+	private String product_name;
+	//내용(product_desc)
+	private String product_desc;
+	//작성일자(product_date)
+	private String product_date;
+	//조회수(product_cnt)
+	private int product_cnt;
+	//게시판 분류(category_number)
+	private int category_number;
+	//가격(product_price)
+	private int product_price;
+	//재고 수량(product_stock)
+	private int product_stock;
 	public int getRownum() {
 		return rownum;
 	}
 	public void setRownum(int rownum) {
 		this.rownum = rownum;
 	}
-	public int getBno() {
-		return bno;
+	public int getProduct_number() {
+		return product_number;
 	}
-	public void setBno(int bno) {
-		this.bno = bno;
+	public void setProduct_number(int product_number) {
+		this.product_number = product_number;
 	}
-	public String getTitle() {
-		return title;
+	public String getProduct_name() {
+		return product_name;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+	public void setProduct_name(String product_name) {
+		this.product_name = product_name;
 	}
-	public String getContent() {
-		return content;
+	public String getProduct_desc() {
+		return product_desc;
 	}
-	public void setContent(String content) {
-		this.content = content;
+	public void setProduct_desc(String product_desc) {
+		this.product_desc = product_desc;
 	}
-	public String getRegdate() {
-		return regdate;
+	public String getProduct_date() {
+		return product_date;
 	}
-	public void setRegdate(String regdate) {
-		this.regdate = regdate;
+	public void setProduct_date(String product_date) {
+		this.product_date = product_date;
 	}
-	public int getCnt() {
-		return cnt;
+	public int getProduct_cnt() {
+		return product_cnt;
 	}
-	public void setCnt(int cnt) {
-		this.cnt = cnt;
+	public void setProduct_cnt(int product_cnt) {
+		this.product_cnt = product_cnt;
 	}
-	public String getId() {
-		return id;
+	public int getCategory_number() {
+		return category_number;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setCategory_number(int category_number) {
+		this.category_number = category_number;
 	}
-	public int getBgno() {
-		return bgno;
+	public int getProduct_price() {
+		return product_price;
 	}
-	public void setBgno(int bgno) {
-		this.bgno = bgno;
+	public void setProduct_price(int product_price) {
+		this.product_price = product_price;
 	}
-	public String getName() {
-		return name;
+	public int getProduct_stock() {
+		return product_stock;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setProduct_stock(int product_stock) {
+		this.product_stock = product_stock;
 	}
 	@Override
 	public String toString() {
-		return "PostVO [rownum=" + rownum + ", bno=" + bno + ", title=" + title + ", content=" + content + ", regdate="
-				+ regdate + ", cnt=" + cnt + ", id=" + id + ", bgno=" + bgno + ", price=" + price + ", image=" + image
-				+ ", name=" + name + "]";
+		return "PostVO [rownum=" + rownum + ", product_number=" + product_number + ", product_name=" + product_name
+				+ ", product_desc=" + product_desc + ", product_date=" + product_date + ", product_cnt=" + product_cnt
+				+ ", category_number=" + category_number + ", product_price=" + product_price + ", product_stock="
+				+ product_stock + "]";
 	}
 
+	
 }

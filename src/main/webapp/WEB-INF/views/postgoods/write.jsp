@@ -15,22 +15,23 @@
 	
 	<div id="wrap">
 		<section id="main-section">
-			<c:if test="${bgno lt 50 }">
-			<span id="service_main_title">글쓰기 "${bgno}"</span>
+			<c:if test="${category_number lt 50 }">
+			<span id="service_main_title">글쓰기 "${category_number}"</span>
 			
 			<form id="form" role="form" method="post">
 			<table id="write-table">
-				<tr><td><input type="text" name="id" value="${sessionScope.mbloginpost.id}"></td></tr>
-				<tr><td><input type="text" name="name" value="${sessionScope.mbloginpost.name}"></td></tr>
-				<tr><td><input type="text" name="bgno" value="${bgno}"></td></tr>
+				<tr><td><input type="hidden" name="category_number" value="${category_number}"></td></tr>
 				<tr><td class="service_sub_font">상품이름</td></tr>
-				<tr><td><input type="text" name="title" style="width:100%" class="service_sub_font"></td></tr>
+				<tr><td><input type="text" name="product_name" style="width:100%" class="service_sub_font"></td></tr>
 				
 				<tr><td class="service_sub_font">제품상세내용</td></tr>
-				<tr><td><textarea id="service_sub_content" class="service_sub_font" name="content" vlaue="content" style="width:100%" rows="10" class="service_sub_font" ></textarea></td></tr>
+				<tr><td><textarea id="service_sub_content" class="service_sub_font" name="product_desc" style="width:100%" rows="10" class="service_sub_font" ></textarea></td></tr>
 				
 				<tr><td class="service_sub_font">가격</td></tr>
-				<tr><td><input type="text" name="price" style="width:50%" placeholder="가격"></td></tr>
+				<tr><td><input type="text" name="product_price" style="width:50%" placeholder="가격"></td></tr>
+				
+				<tr><td class="service_sub_font">재고(수량)</td></tr>
+				<tr><td><input type="text" name="product_stock" style="width:50%" placeholder="가격"></td></tr>
 				
 				<tr><td><input type="submit" id="uploadBtn" style="cursor: pointer" value="상품 등록"></td></tr>
 

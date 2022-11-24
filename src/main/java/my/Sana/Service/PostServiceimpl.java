@@ -42,9 +42,12 @@ public class PostServiceimpl implements PostService{
 	}
 	
 	//remove 첨부파일 삭제용 추상메서드 구현
-	public boolean remove(int bno) {
-		System.out.println("첨부 파일 삭제 게시글 번호:"+ bno);
+	public boolean remove(int product_number) {
+		System.out.println("첨부 파일 삭제 게시글 번호:"+ product_number);
 		
-		return pm.remove(bno);
+		return pm.remove(product_number);
+	}
+	public void modify(PostVO post) {
+		pm.modify(post);
 	}
 }
