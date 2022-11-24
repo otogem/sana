@@ -2,7 +2,6 @@ package my.Sana.Mapper;
 
 import java.util.ArrayList;
 
-import org.Mongle.model.ServiceVO;
 import org.apache.ibatis.annotations.Mapper;
 
 import my.Sana.Model.PostPageVO;
@@ -29,5 +28,5 @@ public interface PostMapper {
 	//상세내용 내용물 삭제 하는 DB작업 설계
 	public boolean remove(int product_number);
 	//상세내용 내용물 수정하는 DB작업 설계
-	public boolean modify(PostVO post);
+	public void modify(PostVO post);
 }

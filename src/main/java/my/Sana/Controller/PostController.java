@@ -85,7 +85,7 @@ public class PostController {
 	}else if(post.getCategory_number()==6) {	// 만약에 category_number가 6이면 
 		writepath="redirect:/goods/category?category_number=6";// test catecori 6
 	}else if(post.getCategory_number()==7) {	// 만약에 category_number가 7이면
-		writepath="redirect:/goods/bkind?category_number=7";// test 고객센터
+		writepath="redirect:/goods/category?category_number=7";// test 고객센터
 	}else{
 		writepath="redirect:/";
 	}
@@ -146,19 +146,19 @@ public class PostController {
 	String modipath="";
 	if(post.getCategory_number()==1) {// 만약에 bgno가 1이면
 			// 공지사항(service/notice)
-		modipath="redirect:/service/bkind?category_number=1";
-	}else if(post.getCategory_number()==2) {	// 만약에 bgno가 2이면
-		modipath="redirect:/service/bkind?category_number=2";// faq 첫번찌 탭
-	}else if(post.getCategory_number()==4) {	// 만약에 bgno가 4이면
-		modipath="redirect:/service/bkind?category_number=4";// faq 두번찌 탭
-	}else if(post.getCategory_number()==5) {	// 만약에 bgno가 5이면
-		modipath="redirect:/service/bkind?category_number=5";// faq 세번찌 탭
-	}else if(post.getCategory_number()==6) {	// 만약에 bgno가 6이면 
-		modipath="redirect:/service/bkind?category_number=6";// faq 네번찌 탭
-	}else if(post.getCategory_number()==7) {	// 만약에 bgno가 7이면
-		modipath="redirect:/service/bkind?category_number=7";// faq 다섯번찌 탭
-	}else {// 그렇지 않으면
-		modipath="redirect:/service/bkind?category_number=3";// 1:1문즤
+		modipath="redirect:/goods/category?category_number=1";
+	}else if(post.getCategory_number()==2) {	// 만약에 Category_number가 2이면
+		modipath="redirect:/goods/category?category_number=2";
+	}else if(post.getCategory_number()==3){		// 만약에 Category_number가 3이면
+		modipath="redirect:/goods/category?category_number=3";
+	}else if(post.getCategory_number()==4) {	// 만약에 Category_number가 4이면
+		modipath="redirect:/goods/category?category_number=4";
+	}else if(post.getCategory_number()==5) {	// 만약에 Category_number가 5이면
+		modipath="redirect:/goods/category?category_number=5";
+	}else if(post.getCategory_number()==6) {	// 만약에 Category_number가 6이면
+		modipath="redirect:/goods/category?category_number=6";
+	}else if(post.getCategory_number()==7) {	// 만약에 Category_number가 7이면
+		modipath="redirect:/goods/category?category_number=7";
 	}
        ps.modify(post);
        rttr.addAttribute("detail",post.getCategory_number());

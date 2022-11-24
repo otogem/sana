@@ -20,5 +20,5 @@ public interface PostService {
 	//글 삭제
 	public boolean remove(int product_number);
 	//글 수정 
-	public boolean modify(PostVO post);
+	public void modify(PostVO post);
 }
