@@ -81,7 +81,9 @@
 		   <update id="modify">
 		   update goodslist
 			   set product_name=#{product_name},
-				   product_desc=#{product_desc}
+				   product_desc=#{product_desc},
+				   product_price=#{product_price},
+				   product_stock=#{product_stock}
 		   where product_number=#{product_number}
 		   </update>
 		   

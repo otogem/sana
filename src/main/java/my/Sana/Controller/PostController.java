@@ -1,7 +1,5 @@
 package my.Sana.Controller;
 
-import java.util.ArrayList;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -134,6 +132,8 @@ public class PostController {
 	//상품 수정 받기
 	@RequestMapping(value = "/goods/modify", method = RequestMethod.GET)
 	public String getmodify(PostVO post,Model model) {
+		System.out.println("상품 상세 페이지");
+		 System.out.println( post);
 		model.addAttribute("detail",ps.detail(post));
 		return "/postgoods/modify";
 	}
@@ -142,10 +142,8 @@ public class PostController {
     @RequestMapping(value = "/goods/modify", method =  RequestMethod.POST )
     public String postmodify(PostVO post,RedirectAttributes rttr) {		
     System.out.println(post);
-   	String path="";
 	String modipath="";
 	if(post.getCategory_number()==1) {// 만약에 bgno가 1이면
-			// 공지사항(service/notice)
 		modipath="redirect:/goods/category?category_number=1";
 	}else if(post.getCategory_number()==2) {	// 만약에 Category_number가 2이면
 		modipath="redirect:/goods/category?category_number=2";
@@ -159,7 +157,10 @@ public class PostController {
 		modipath="redirect:/goods/category?category_number=6";
 	}else if(post.getCategory_number()==7) {	// 만약에 Category_number가 7이면
 		modipath="redirect:/goods/category?category_number=7";
+	}else{
+		modipath="redirect:/";
 	}
+	
        ps.modify(post);
        rttr.addAttribute("detail",post.getCategory_number());
        return modipath;

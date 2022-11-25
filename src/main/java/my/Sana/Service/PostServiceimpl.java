@@ -47,6 +47,8 @@ public class PostServiceimpl implements PostService{
 		
 		return pm.remove(product_number);
 	}
+	
+	//modify 현재 간단한 글수정용
 	public void modify(PostVO post) {
 		pm.modify(post);
 	}

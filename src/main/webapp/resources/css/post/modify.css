@@ -27,7 +27,7 @@
 	resize : none;
 }
 
-#uploadBtn{ /*상품 등록 버튼*/
+#uploadBtn{ /*상품 수정 버튼*/
 	padding:10px 15px 10px 15px;
 	background-color: #FFFFFF;
 	float:right;
