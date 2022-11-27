@@ -162,7 +162,7 @@ public class PostController {
 	}
 	
        ps.modify(post);
-       rttr.addAttribute("detail",post.getCategory_number());
+       rttr.addAttribute("detail",post.getProduct_number());
        return modipath;
     }
 }

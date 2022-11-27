@@ -17,15 +17,17 @@
 	<div id="wrap">
 		<section id="main-section">
 		test
-			<span id="service_main_title">상품 수정 "${detail.category_number}"</span>
 			
-			<input type="text" name="product_number" value="상품 번호:${detail.product_number}">
-			<input type="hidden" name="category_number" value="${category_number}">
-			
-			<form role="form" method="POST">
+			<form role="form" method="POST" action="/goods/modify">
 			<table id="write-table">
+				
+			
 				<tr><td class="service_sub_font">상품이름</td></tr>
-				<tr><td><input type="text" name="product_name" style="width:100%" class="service_sub_font" value="${detail.product_name }"></td></tr>
+				<tr>
+					<td><input type="text" name="product_name" style="width:100%" class="service_sub_font" value="${detail.product_name }"></td>
+					<td><input type="hidden" name="category_number" value="${detail.category_number}"></td>
+					<td><input type="hidden" name="product_number" value="${detail.product_number}"></td>
+				</tr>
 				
 				<tr><td class="service_sub_font">제품상세내용</td></tr>
 				<tr><td><textarea id="service_sub_content" class="service_sub_font" name="product_desc" style="width:100%" rows="10" class="service_sub_font" >${detail.product_desc }</textarea></td></tr>
