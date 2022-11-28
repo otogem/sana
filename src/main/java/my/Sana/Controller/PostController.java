@@ -1,12 +1,20 @@
 package my.Sana.Controller;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import my.Sana.Model.PostFileVO;
 import my.Sana.Model.PostPageSubVO;
 import my.Sana.Model.PostPageVO;
 import my.Sana.Model.PostVO;
@@ -104,10 +112,10 @@ public class PostController {
 	@RequestMapping(value="/goods/remove",method = RequestMethod.POST)
 	public String remove(int product_number,PostVO post,RedirectAttributes rttr) {
 		String removepath="";
-//		ArrayList<ServiceFileListVO> filelist = ps.filelist(product_number);
+		ArrayList<PostFileVO> filelist = ps.filelist(product_number);
 		System.out.println(product_number+"번 게시글 삭제");
 		if(ps.remove(product_number)) {
-			//deleteFiles(filelist);
+			deleteFiles(filelist);
 			rttr.addFlashAttribute("result", "success");
 		}
 		//비즈니스 영역 연결한 후 PostService 에 있는 write메소드
@@ -127,6 +135,26 @@ public class PostController {
 			}
 		
 		return removepath;
+	}
+	
+	//게시글 삭제 실행시 첨부파일 여부에 따른 첨부파일 삭제 
+	private void deleteFiles(ArrayList<PostFileVO> filelist) {
+		if(filelist == null || filelist.size() == 0) {return;}
+		System.out.println("파일 분류실행");	
+		filelist.forEach(postfile -> {
+			try {
+				Path file = Paths.get("D:\\upload\\"+postfile.getUploadPath()+
+						"\\"+postfile.getUuid()+"_"+postfile.getFileName());
+				Files.deleteIfExists(file);
+				if(Files.probeContentType(file).startsWith("image")) {
+					Path thumbNail = Paths.get("D:\\upload\\"+postfile.getUploadPath()+
+							"\\s_"+postfile.getUuid()+"_"+postfile.getFileName());
+					Files.delete(thumbNail);
+				}	
+			}catch(Exception e) {
+				System.out.println("delete file error:"+e.getMessage());
+			}
+		});
 	}
 	
 	//상품 수정 받기
@@ -165,4 +193,11 @@ public class PostController {
        rttr.addAttribute("detail",post.getProduct_number());
        return modipath;
     }
+    
+	//1:1게시물의 첨부파일 데이터 ajax로 전송
+	@RequestMapping(value="/filelist",method=RequestMethod.GET)
+	public ResponseEntity<ArrayList<PostFileVO>>filelist(int product_number){
+		
+		return new ResponseEntity<>(ps.filelist(product_number),HttpStatus.OK);
+	}
 }

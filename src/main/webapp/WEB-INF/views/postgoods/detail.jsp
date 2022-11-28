@@ -6,6 +6,7 @@
 <title>Home</title>
 	<jsp:include page="../main/maincss.jsp"></jsp:include>
 	<link href="../resources/css/post/detail.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="/resources/js/post/postAttach.js"></script>
 </head>
 <body>
 
@@ -46,6 +47,12 @@
 						<div><strong>${detail.product_name }</strong></div>
 						<div><p>${detail.product_price }원</p></div>
 					</div>
+					
+								첨부파일<div id="uploadResult">
+									<ul>
+				
+									</ul>
+								</div>
 				</div>
 			</div>
 			</section>

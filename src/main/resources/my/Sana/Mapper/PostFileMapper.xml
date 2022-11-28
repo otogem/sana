@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="my.Sana.Mapper.PostFileMapper">
+		
+		<!-- 파일경로,파일명,uuid,image여부를  Service_file 테이블 에 insert-->
+		<insert id="insert">
+				insert into goodsfile(uuid,uploadPath,filename,image,product_number)
+				value(#{uuid},#{uploadPath},#{fileName},#{image},#{product_number})
+		</insert>
+		
+		<delete id="deleteAll">
+			delete from goodsfile where product_number=#{product_number}
+		</delete>
+		
+		<select id="filelist" resultType="my.Sana.Model.PostFileVO">
+			select * from goodsfile where product_number=#{product_number};
+		</select>
+
+</mapper>

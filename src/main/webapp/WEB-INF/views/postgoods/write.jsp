@@ -6,6 +6,7 @@
 <title>category-write</title>
 	<jsp:include page="../main/maincss.jsp"></jsp:include>
 	<link href="../resources/css/post/write.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="/resources/js/post/postUploadAjax.js"></script>
 </head>
 <body>
 <!-- 헤더 파트  -->
@@ -37,6 +38,13 @@
 
 			</table>
 			</form>
+				<div id="uploaddiv"><input type="file" name="uploadFile" multiple></div>
+					<div id="uploadResult">상품이미지
+							<ul>
+						
+							</ul>
+					</div>
+				</div>
 			</c:if>
 		</section>
 		

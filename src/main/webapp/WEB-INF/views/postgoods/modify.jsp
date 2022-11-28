@@ -6,6 +6,8 @@
 <title>Home</title>
 	<jsp:include page="../main/maincss.jsp"></jsp:include>
 	<link href="../resources/css/post/modify.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="/resources/js/post/postUploadAjax.js"></script>
+	<script type="text/javascript" src="/resources/js/post/postUploadModify.js"></script>
 </head>
 <body>
 
@@ -42,6 +44,12 @@
 				
 			</table>
 			</form>
+							<div id="uploaddiv"><input type="file" name="uploadFile" multiple>첨부파일</div>			
+							<div id="uploadResult">
+								<ul>
+			
+								</ul>
+							</div>
 
 			</section>
 

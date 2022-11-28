@@ -1,5 +1,8 @@
 package my.Sana.Model;
 
+import java.util.ArrayList;
+
+
 public class PostVO {
 	//가상번호(rownum)
 	private int rownum;
@@ -19,6 +22,9 @@ public class PostVO {
 	private int product_price;
 	//재고 수량(product_stock)
 	private int product_stock;
+	//PostFileVO(파일 업로드 관련 model)
+	private ArrayList<PostFileVO> postfile;
+	
 	public int getRownum() {
 		return rownum;
 	}
@@ -73,13 +79,21 @@ public class PostVO {
 	public void setProduct_stock(int product_stock) {
 		this.product_stock = product_stock;
 	}
+	public ArrayList<PostFileVO> getPostfile() {
+		return postfile;
+	}
+	public void setPostfile(ArrayList<PostFileVO> postfile) {
+		this.postfile = postfile;
+	}
 	@Override
 	public String toString() {
 		return "PostVO [rownum=" + rownum + ", product_number=" + product_number + ", product_name=" + product_name
 				+ ", product_desc=" + product_desc + ", product_date=" + product_date + ", product_cnt=" + product_cnt
 				+ ", category_number=" + category_number + ", product_price=" + product_price + ", product_stock="
-				+ product_stock + "]";
+				+ product_stock + ", postfile=" + postfile + "]";
 	}
+	
+	
 
 	
 }

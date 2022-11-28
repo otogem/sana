@@ -28,5 +28,5 @@ public interface PostMapper {
 	//상세내용 내용물 삭제 하는 DB작업 설계
 	public boolean remove(int product_number);
 	//상세내용 내용물 수정하는 DB작업 설계
-	public void modify(PostVO post);
+	public boolean modify(PostVO post);
 }

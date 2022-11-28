@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.springframework.stereotype.Service;
 
+import my.Sana.Model.PostFileVO;
 import my.Sana.Model.PostPageVO;
 import my.Sana.Model.PostVO;
 
@@ -20,5 +21,7 @@ public interface PostService {
 	//글 삭제
 	public boolean remove(int product_number);
 	//글 수정 
-	public void modify(PostVO post);
+	public boolean modify(PostVO post);
+	//첨부파일 조회 설계
+	public ArrayList<PostFileVO>filelist(int product_number);
 }
