@@ -76,7 +76,7 @@ public class PostController {
 	@RequestMapping(value = "/goods/write", method = RequestMethod.POST)
 	public String writePost(PostVO post) {
 	String writepath="";
-	System.out.println(post);
+	System.out.println("3"+post);
 	//비즈니스 영역 연결한 후 postpost 에 있는 write메소드
 	if(post.getCategory_number()==1) {// 만약에 category_number가 1이면
 		writepath="redirect:/goods/category?category_number=1"; //test catecori 1
@@ -103,7 +103,7 @@ public class PostController {
 	/*상품 상세페이지*/
 	@RequestMapping(value="/goods/detail", method = RequestMethod.GET)
 	public String detail(PostVO post,Model model) {
-		System.out.println(post);
+		System.out.println("상세"+post);
 		model.addAttribute("detail",ps.detail(post));
 		return "/postgoods/detail";
 	}
@@ -161,7 +161,7 @@ public class PostController {
 	@RequestMapping(value = "/goods/modify", method = RequestMethod.GET)
 	public String getmodify(PostVO post,Model model) {
 		System.out.println("상품 상세 페이지");
-		 System.out.println( post);
+		 System.out.println("상품수정"+post);
 		model.addAttribute("detail",ps.detail(post));
 		return "/postgoods/modify";
 	}
@@ -169,7 +169,7 @@ public class PostController {
 	/* 상품 수정 보내기*/
     @RequestMapping(value = "/goods/modify", method =  RequestMethod.POST )
     public String postmodify(PostVO post,RedirectAttributes rttr) {		
-    System.out.println(post);
+    System.out.println("상품수정보내기"+post);
 	String modipath="";
 	if(post.getCategory_number()==1) {// 만약에 bgno가 1이면
 		modipath="redirect:/goods/category?category_number=1";

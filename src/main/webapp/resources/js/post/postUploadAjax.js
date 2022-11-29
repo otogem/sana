@@ -35,7 +35,6 @@ $(document).ready(function(){
 	//파일을 업로드할때(id="uploadFile")을 클릭후 선택하면
 	var cloneOjb=$("#uploaddiv").clone();
 	$("input[type='file']").change(function(e){
-		alert("파일업로드 알러트")
 		//파일업로드 관련 로직 처리
 		//.jsp의 form태그를 대체(FormData함수)
 		var formData=new FormData();		

@@ -36,7 +36,7 @@ public class PostServiceimpl implements PostService{
 	
 	//list 추상메서드 구현
 	public ArrayList<PostVO> list(PostPageVO ppa){
-		System.out.println("service="+ppa);
+		System.out.println("postlist="+ppa);
 		return pm.list(ppa);
 	}
 	
@@ -56,6 +56,8 @@ public class PostServiceimpl implements PostService{
 	//remove 첨부파일 삭제용 추상메서드 구현
 	public boolean remove(int product_number) {
 		System.out.println("첨부 파일 삭제 게시글 번호:"+ product_number);
+		
+		pfm.deleteAll(product_number);
 		
 		return pm.remove(product_number);
 	}

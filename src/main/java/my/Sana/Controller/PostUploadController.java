@@ -103,8 +103,8 @@ public class PostUploadController {
 		//ArrayList에 저장
 			PostFileVO fileVO = new PostFileVO();
 			
-		System.out.println(multipartFile.getOriginalFilename());
-		System.out.println(multipartFile.getSize());
+		System.out.println("2"+multipartFile.getOriginalFilename());
+		System.out.println("2"+multipartFile.getSize());
 
 		
 		//파일저장
@@ -155,7 +155,7 @@ public class PostUploadController {
 	// 이미지 주소 생성
 	@RequestMapping(value="/postdisplay",method=RequestMethod.GET)
 	public ResponseEntity<byte[]> getFile(String fileName){
-		System.out.println(fileName);
+		System.out.println("1"+fileName);
 		
 		File file = new File("D:\\upload\\"+fileName);
 

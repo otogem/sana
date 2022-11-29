@@ -35,16 +35,20 @@
 				<tr><td><input type="text" name="product_stock" style="width:50%" placeholder="가격"></td></tr>
 				
 				<tr><td><input type="submit" id="uploadBtn" style="cursor: pointer" value="상품 등록"></td></tr>
-
+				
+				<tr><td>
+					<div id="uploaddiv"><input type="file" name="uploadFile" multiple></div>
+						<div id="uploadResult">상품이미지
+								<ul>
+							
+								</ul>
+						</div>
+					</div>
+				</td></tr>
+				
 			</table>
 			</form>
-				<div id="uploaddiv"><input type="file" name="uploadFile" multiple></div>
-					<div id="uploadResult">상품이미지
-							<ul>
-						
-							</ul>
-					</div>
-				</div>
+
 			</c:if>
 		</section>
 		
