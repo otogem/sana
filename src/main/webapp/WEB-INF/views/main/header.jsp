@@ -31,6 +31,7 @@
 			<li><a href="/goods/category?category_number=4">4category</a></li>
 			<li><a href="/goods/category?category_number=5">5category</a></li>
 			<li><a href="/goods/category?category_number=6">6category</a></li>
+			<li><a href="/user/support?support_number=1">고객지원</a></li>
 		</ul>
 		</div>
 		</div>

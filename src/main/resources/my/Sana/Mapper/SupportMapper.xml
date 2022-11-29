@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="my.Sana.Mapper.SupportMapper">
+	
+		<!-- Supportnumber 리스트 -->
+	<select id="list" resultType="my.Sana.Model.SupportVO" parameterType="map">
+		select * from(
+        select *, @rownum:=@rownum+1 num from(
+        select
+        @row_no:=IF(@prev_val =b.support_number,@row_no+1,1)AS 
+        rownum,@prev_val := b.support_number as support_number,bno,title,content,regdate,cnt,id
+		from supportlist b,
+        (select @rownum :=0)z,
+        (select @row_no := 0)x,
+        (select @prev_val :='')y
+        where support_number=#{support_number}
+			<if test="keyword !=null">
+				<choose>
+					<when test="type == 'T'.toString()">
+						and title like concat('%',#{keyword},'%')
+					</when>
+					<when test="type == 'C'.toString()">
+						and content like concat('%',#{keyword},'%')
+					</when>
+					<otherwise>
+						OR title like concat('%',null,'%')
+						OR content like concat('%',null,'%')
+					</otherwise>
+				</choose>
+			</if>
+			    order by rownum desc
+			    )as support)as support
+			<![CDATA[
+				where num> (#{pageNum}-1)*#{amount} and num<=#{pageNum}*#{amount}
+			]]>
+	</select>
+	
+		<select id="total" resultType="int">
+   		select count(*) from supportlist
+   		where support_number=#{support_number}
+   		<if test="keyword !=null">
+			 <choose>
+				    <when test="type == 'T'.toString()">
+				      and title like concat('%',#{keyword},'%')
+				    </when>
+				    <when test="type == 'C'.toString()">
+				      and content like concat('%',#{keyword},'%')
+				    </when>
+				    <otherwise>
+				      or title like concat('%',null,'%')
+				      OR content like concat('%',null,'%')
+				    </otherwise>				    	
+			 </choose>
+		</if>
+	   </select>
+	   
+</mapper>

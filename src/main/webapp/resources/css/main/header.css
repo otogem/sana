@@ -7,9 +7,8 @@
 	padding: 0;	
 }
 
-body{
-	padding-top: 120px;
-		
+html,body{
+	height:100%;	
 }
 
 a{
@@ -22,13 +21,11 @@ li{
 }
 
 #wrap{
-	position: relative;
-	width: 100%;
+	min-width: 100%;
 }
 
 #main-section{
-	width:100%;
-	margin-bottom: 30px;
+	padding-bottom:181px;
 }
 /*공통 라인 끝*/
 
@@ -36,7 +33,6 @@ li{
 	width:100%;
 	height:120px;
 	background-color: black;
-	position: fixed;
     left: 0;
     top: 0;
     z-index: 98;

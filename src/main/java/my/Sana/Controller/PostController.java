@@ -35,7 +35,6 @@ public class PostController {
 	}
 	
 	//각페이지별 category_number 각페이지별로 부여 이동
-	//확장을 가능성을 남겨두기위해 50번까진 카테고리 한테 그이후를 백엔드쪽페이지로 넘김
 	@RequestMapping(value = "/goods/category", method = RequestMethod.GET)
 	public String writepage(Model model,PostPageVO ppa) {
 		String path="";
