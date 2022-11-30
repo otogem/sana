@@ -1,5 +1,7 @@
 package my.Sana.Model;
 
+import java.util.ArrayList;
+
 public class SupportVO {
 	//가상번호(rownum)
 	private int rownum;
@@ -19,6 +21,15 @@ public class SupportVO {
 	private int support_number;
 	//이름(name)
 	private String name;
+	//PostFileVO(파일 업로드 관련 model)
+	private ArrayList<SupportFileVO> supportfile;
+	
+	public ArrayList<SupportFileVO> getSupportfile() {
+		return supportfile;
+	}
+	public void setSupportfile(ArrayList<SupportFileVO> supportfile) {
+		this.supportfile = supportfile;
+	}
 	public int getRownum() {
 		return rownum;
 	}
@@ -77,7 +88,7 @@ public class SupportVO {
 	public String toString() {
 		return "SupportVO [rownum=" + rownum + ", bno=" + bno + ", title=" + title + ", content=" + content
 				+ ", regdate=" + regdate + ", cnt=" + cnt + ", id=" + id + ", support_number=" + support_number
-				+ ", name=" + name + "]";
+				+ ", name=" + name + ", supportfile=" + supportfile + "]";
 	}
 	
 		

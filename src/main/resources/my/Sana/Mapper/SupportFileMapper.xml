@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="my.Sana.Mapper.SupportFileMapper">
+		
+		<!-- 파일경로,파일명,uuid,image여부를  Service_file 테이블 에 insert-->
+		<insert id="insert">
+				insert into supportfile(uuid,uploadPath,filename,image,bno)
+				value(#{uuid},#{uploadPath},#{fileName},#{image},#{bno})
+		</insert>
+		
+		<delete id="deleteAll">
+			delete from supportfile where bno=#{bno}
+		</delete>
+		
+		<select id="spfilelist" resultType="my.Sana.Model.SupportFileVO">
+			select * from supportfile where bno=#{bno};
+		</select>
+
+</mapper>
