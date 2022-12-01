@@ -56,7 +56,7 @@ public class SupportController {
 			model.addAttribute("list",ss.list(spa));
 			path="/";// 홈
 		}
-		//model.addAttribute("list",ss.list(support_number,ppa));
+		//model.addAttribute("list",ss.list(support_number,spa));
 		int total=ss.total(spa);
 		model.addAttribute("list",ss.list(spa));
 		model.addAttribute("paging",new SupportPageSubVO(spa,total));

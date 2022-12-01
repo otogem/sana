@@ -5,7 +5,8 @@
   <head>
 <title>category-write</title>
 	<jsp:include page="../main/maincss.jsp"></jsp:include>
-	<link href="../resources/css/post/write.css" rel="stylesheet" type="text/css">
+	<link href="../resources/css/support/supportwrite.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="../resources/js/support/supportUploadAjax.js"></script>
 </head>
 <body>
 <!-- 헤더 파트  -->
@@ -15,7 +16,29 @@
 	
 	<div id="wrap">
 		<section id="main-section">
-			글쓰기
+			<div id="main-section-sub">
+			<form id="form" role="form" method="post">
+			<table>
+				<tr><td><input type="text" name="id" value="${sessionScope.mbloginpost.id}"></td></tr>
+				<tr><td><input type="text" name="name" value="${sessionScope.mbloginpost.name}"></td></tr>
+				<tr><td><input type="text" name="support_number" value="${support_number}"></td></tr>
+				<tr><td class="support_sub_font">제목</td></tr>
+				<tr><td><input type="text" name="title" value="title" class="support_sub_font"></td></tr>
+				
+				<tr><td class="support_sub_font">내용</td></tr>
+				<tr><td><textarea id="support_sub_content" class="support_sub_font" name="content" vlaue="content" cols="50" rows="10" class="service_sub_font" ></textarea></td></tr>
+				
+				<tr><td><input type="button" id="uploadBtn" style="cursor: pointer" value="글쓰기"></td></tr>
+
+			</table>
+			</form>
+				<div id="uploaddiv"><input type="file" name="uploadFile" multiple></div>
+					<div id="uploadResult">
+							<ul>
+						
+							</ul>
+					</div>
+			</div>
 		</section>
 		
 	<!-- footer 파트 시작 -->

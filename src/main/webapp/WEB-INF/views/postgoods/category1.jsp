@@ -7,7 +7,6 @@
 <title>category</title>
 	<jsp:include page="../main/maincss.jsp"></jsp:include>
 	<link href="../resources/css/post/category.css" rel="stylesheet" type="text/css">
-	<script type="text/javascript" src="/resources/js/post/postAttach.js"></script>
 </head>
 <body>
 <!-- 헤더 파트  -->
@@ -30,14 +29,11 @@
 							<div><p>${category.product_price }원</p></div>
 							<div>	<fmt:parseDate value="${category.product_date}" var="product_date" pattern="yyyy-MM-dd HH:mm:ss" />
 								<fmt:formatDate pattern="yyyy-MM-dd" value="${product_date}"/></div>
-								<img src="/postdisplay?fileName=${category.postfile }" alt="안뜸">
 								<div id="uploadResult">
 									<ul>
 				
 									</ul>
 								</div>
-								<img alt="이것도 안뜸" src='/postdisplay?fileName=+${file.filePath}'>
-								<img alt="이것도 안뜸2" src='/postdisplay?fileName=+${filePath}'>
 							</a> 
 						</div>
 					</c:forEach>

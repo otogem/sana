@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+#main-section{
+	width:100%;
+	margin-bottom: 30px;
+}
+
+.support_sub_font{
+	font-size:24px;
+	font-weight:500;
+}
+
+#support_sub_content{
+	resize : none;
+}
+
+#uploadBtn{ /*상품 등록 버튼*/
+	padding:10px 15px 10px 15px;
+	background-color: #FFFFFF;
+	float:right;
+	display: block;	
+	border: #f8e6e0 2px solid;
+	border-radius:5px;
+}
+
+#uploadBtn:hover{
+	background-color:#f8e6e0;
+}

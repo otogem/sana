@@ -16,7 +16,7 @@
 	
 	<div id="wrap">
 		<section id="main-section">
-			<c:if test="${category_number lt 50 }">
+					<div id="main-section-sub">
 			<span id="service_main_title">글쓰기 "${category_number}"</span>
 			
 			<form id="form" role="form" method="post">
@@ -36,20 +36,16 @@
 				
 				<tr><td><input type="submit" id="uploadBtn" style="cursor: pointer" value="상품 등록"></td></tr>
 				
-				<tr><td>
+				
+			</table>
+			</form>
 					<div id="uploaddiv"><input type="file" name="uploadFile" multiple></div>
-						<div id="uploadResult">상품이미지
+					<div id="uploadResult">상품이미지
 								<ul>
 							
 								</ul>
 						</div>
 					</div>
-				</td></tr>
-				
-			</table>
-			</form>
-
-			</c:if>
 		</section>
 		
 	<!-- footer 파트 시작 -->

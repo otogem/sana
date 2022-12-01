@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+.category-sell-box{
+	width:250px;
+	display: inline-block;
+	border: 1px solid;
+	margin: 20px;
+}
+
+.category-sell-box>a>div{
+	text-align: center;
+}

@@ -11,8 +11,8 @@
 					from supportlist
 				</selectKey>
 				
-			  insert into supportlist(bno,title,content,cnt,supprt_number,regdate,id)
-		      values(#{bno},#{title},#{content},#{cnt},#{supprt_number},#{regdate},#{id)
+			  insert into supportlist(bno,title,content,cnt,support_number,regdate,id,name)
+		      values(#{bno},#{title},#{content},#{cnt},#{support_number},#{regdate},#{id},#{name})
 		</insert>
 		
 		<!-- Supportnumber 리스트 -->
@@ -21,7 +21,7 @@
         select *, @rownum:=@rownum+1 num from(
         select
         @row_no:=IF(@prev_val =b.support_number,@row_no+1,1)AS 
-        rownum,@prev_val := b.support_number as support_number,bno,title,content,regdate,cnt,id
+        rownum,@prev_val := b.support_number as support_number,bno,title,content,regdate,cnt,id,name
 		from supportlist b,
         (select @rownum :=0)z,
         (select @row_no := 0)x,
@@ -67,7 +67,7 @@
 		</if>
 	   </select>
 	   
-	     <select id="detail" resultType="my.Sana.Model.PostVO">
+	     <select id="detail" resultType="my.Sana.Model.SupportVO">
 		      select*from supportlist where bno=#{bno}
 		   </select>
 		   

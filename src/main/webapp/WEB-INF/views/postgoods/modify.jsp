@@ -18,8 +18,8 @@
 	
 	<div id="wrap">
 		<section id="main-section">
-		test
-			
+			<div id="main-section-sub">
+						
 			<form role="form" method="POST" action="/goods/modify">
 			<table id="write-table">
 				
@@ -38,7 +38,7 @@
 				<tr><td><input type="text" name="product_price" style="width:50%" placeholder="가격" value="${detail.product_price }"></td></tr>
 				
 				<tr><td class="service_sub_font">재고(수량)</td></tr>
-				<tr><td><input type="text" name="product_stock" style="width:50%" placeholder="가격" value="${detail.product_stock }"></td></tr>
+				<tr><td><input type="text" name="product_stock" style="width:50%" placeholder="수량" value="${detail.product_stock }"></td></tr>
 				
 				<tr><td><input type="submit" id="uploadBtn" style="cursor: pointer" value="상품 수정" onclick="alert('상품 수정 완료')" formaction="/goods/modify"></td></tr>
 				
@@ -50,7 +50,7 @@
 			
 								</ul>
 							</div>
-
+				</div>
 			</section>
 
 	<!-- footer 파트 시작 -->

@@ -19,6 +19,7 @@
 		<form name="goods-detail" method="POST">
 		
 		<section id="main-section">
+			<div id="main-section-sub">
 			<c:choose>
 			     <c:when test="${sessionScope.mbloginpost.id=='admin'}">
 								<a href="/goods/modify?product_number=${detail.product_number }&category_number=${detail.category_number}" class="goods_detail_button" style="cursor: pointer">상품 수정 하러 하기</a>
@@ -54,6 +55,7 @@
 									</ul>
 								</div>
 				</div>
+			</div>
 			</div>
 			</section>
 			
