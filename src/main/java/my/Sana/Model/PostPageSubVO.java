@@ -9,7 +9,7 @@ public class PostPageSubVO {
 	private boolean prev;
 	//다음버튼
 	private boolean next;
-	//ServicePageVO 포함
+	//PostPageVO 포함
 	private PostPageVO ppa;
 	//board테이블의 전체건수를 저장
 	private int total;

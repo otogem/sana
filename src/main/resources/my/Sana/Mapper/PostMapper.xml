@@ -19,15 +19,17 @@
 		select * from(
         select *, @rownum:=@rownum+1 num from(
         select
-        @row_no:=IF(@prev_val =b.category_number,@row_no+1,1)AS 
-        rownum,@prev_val := b.category_number as category_number,product_number,product_name,product_stock,product_price,product_desc
-        ,product_cnt,product_date
-		from goodslist b,
+        @row_no:=IF(@prev_val =gl.category_number,@row_no+1,1)AS 
+        rownum,@prev_val := gl.category_number as category_number,gl.product_number,product_name,product_stock,product_price,product_desc
+        ,product_cnt,product_date,Concat(replace(uploadpath,'\\','/'),'/',uuid,'_',fileName)as filem 
+		from  goodslist gl join goodsfile gf on gl.product_number = gf.product_number,
         (select @rownum :=0)z,
         (select @row_no := 0)x,
         (select @prev_val :='')y
         where category_number=#{category_number}
-			<if test="keyword !=null">
+        			    order by rownum desc
+			    )as goods)as goods
+			<!-- <if test="keyword !=null">
 				<choose>
 					<when test="type == 'T'.toString()">
 						and title like concat('%',#{keyword},'%')
@@ -41,11 +43,10 @@
 					</otherwise>
 				</choose>
 			</if>
-			    order by rownum desc
-			    )as goods)as goods
+
 			<![CDATA[
 				where num> (#{pageNum}-1)*#{amount} and num<=#{pageNum}*#{amount}
-			]]>
+			]]> -->
 	</select>
 
 			

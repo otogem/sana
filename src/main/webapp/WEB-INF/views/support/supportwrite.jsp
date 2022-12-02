@@ -23,7 +23,7 @@
 				<tr><td><input type="text" name="name" value="${sessionScope.mbloginpost.name}"></td></tr>
 				<tr><td><input type="text" name="support_number" value="${support_number}"></td></tr>
 				<tr><td class="support_sub_font">제목</td></tr>
-				<tr><td><input type="text" name="title" value="title" class="support_sub_font"></td></tr>
+				<tr><td><input type="text" name="title" class="support_sub_font"></td></tr>
 				
 				<tr><td class="support_sub_font">내용</td></tr>
 				<tr><td><textarea id="support_sub_content" class="support_sub_font" name="content" vlaue="content" cols="50" rows="10" class="service_sub_font" ></textarea></td></tr>

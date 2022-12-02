@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+#main-section-sub{
+	width:100%;
+}
+#searchForm{
+	margin:20px 0px 0px 20px;
+}
 .category-sell-box{
 	width:250px;
 	display: inline-block;
@@ -10,3 +16,45 @@
 .category-sell-box>a>div{
 	text-align: center;
 }
+
+/*페이징 css 시작*/
+.page_table{ /*페이지 감싼 테이블*/
+	border: none;
+	margin: auto;
+}
+
+.page_table>td{ /* a태그 색부여를 위한 td 감추기*/
+	border: 0px;
+	padding: 0 3px 0 3px;
+}
+
+.page_table>td>a{ /* a태그 꾸미는 파트 */
+	text-decoration: none;
+	font-size:30px;
+	color:black;
+}
+
+.page_table>.on>a{ /* 선택된 a태그 색부여 */
+	color:#f8e6e0;
+}
+/*페이징 css 끝*/
+
+/*버튼 꾸미기 시작*/
+
+#support_button{ /* 질문 하기 버튼 꾸미기*/
+	padding:20px;
+	background-color: #FFFFFF;
+	margin:auto;
+	display: block;	
+	border: #f8e6e0 2px solid;
+	border-radius:5px;
+	width:130px;
+	font-size: 15px;
+	text-decoration: none;
+	color: black;
+}
+
+#support_button:hover{
+	background-color:#f8e6e0;
+}
+/*버튼 꾸미기 끝*/

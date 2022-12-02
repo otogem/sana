@@ -36,7 +36,7 @@ public class SupportController {
 	}
 	
 	//각페이지별 support_number 각페이지별로 부여 이동
-	@RequestMapping(value = "/support/main", method = RequestMethod.GET)
+	@RequestMapping(value = "/support/user", method = RequestMethod.GET)
 	public String writepage(Model model,SupportPageVO spa) {
 		String path="";
 		if(spa.getSupport_number()==1) {// 만약에 support_number가 1이면
@@ -70,7 +70,7 @@ public class SupportController {
 		System.out.println("3"+support);
 		//비즈니스 영역 연결한 후 supportsupport 에 있는 write메소드
 		if(support.getSupport_number()==1) {// 만약에 support_number가 1이면
-			writepath="redirect:/support/main?support_number=1"; //test catecori 1
+			writepath="redirect:/support/user?support_number=1"; //test catecori 1
 		}else if(support.getSupport_number()==2) {	// 만약에 support_number가 2이면
 			writepath="redirect:/goods/category?support_number=2";// test catecori 2
 		}else if(support.getSupport_number()==3){ 	// 만약에 support_number가 3이면
@@ -111,7 +111,7 @@ public class SupportController {
 			}
 			//비즈니스 영역 연결한 후 supportService 에 있는 write메소드
 			if(support.getSupport_number()==1) {// 만약에 support_number가 1이면
-						removepath="redirect:/support/main?support_number=1";
+						removepath="redirect:/support/user?support_number=1";
 				}else if(support.getSupport_number()==2) {	// 만약에 support_number가 2이면
 						removepath="redirect:/goods/category?support_number=2";
 				}else if(support.getSupport_number()==3){	// 만약에 support_number가 3이면
@@ -162,7 +162,7 @@ public class SupportController {
 	    System.out.println("상품수정보내기"+support);
 		String modipath="";
 		if(support.getSupport_number()==1) {// 만약에 support_number가 1이면
-			modipath="redirect:/support/main?support_number=1";
+			modipath="redirect:/support/user?support_number=1";
 		}else if(support.getSupport_number()==2) {	// 만약에 support_number가 2이면
 			modipath="redirect:/goods/category?support_number=2";
 		}else if(support.getSupport_number()==3){		// 만약에 support_number가 3이면

@@ -13,7 +13,7 @@ public interface PostService {
 	//글쓰기 설계
 	public void write(PostVO post);
 	//글 목록 리스트 설계
-	public ArrayList<PostVO> list(PostPageVO ppa);
+	public ArrayList<PostVO> list(PostVO post);
 	//각 페이지별  전체 건수 설계
 	public int total(PostPageVO ppa);
 	//글 상세 내용 보기 설계

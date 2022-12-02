@@ -24,11 +24,14 @@
 						<div class="category-sell-box"><a href="detail?product_number=${category.product_number }&category_number=1">
 							<input type="hidden" name="product_number" value="${category.product_number}">
 							<input type="hidden" name="category_number" value="${category.category_number}">
-							<input type="hidden" name="cnt" value="${category.product_cnt}">																	
+							<input type="hidden" name="cnt" value="${category.product_cnt}">
+							<div><img src="/postdisplay?fileName=${category.filem}"></div>																	
 							<div><strong>${category.product_name }</strong></div>
 							<div><p>${category.product_price }원</p></div>
-							<div>	<fmt:parseDate value="${category.product_date}" var="product_date" pattern="yyyy-MM-dd HH:mm:ss" />
-								<fmt:formatDate pattern="yyyy-MM-dd" value="${product_date}"/></div>
+							<div>
+								<fmt:parseDate value="${category.product_date}" var="product_date" pattern="yyyy-MM-dd HH:mm:ss" />
+								<fmt:formatDate pattern="yyyy-MM-dd" value="${product_date}"/>
+							</div>
 								<div id="uploadResult">
 									<ul>
 				

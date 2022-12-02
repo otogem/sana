@@ -18,10 +18,10 @@
 			
 			<c:choose>
 				 <c:when test="${mbloginpost.id != null || kakaoInfo.nickname != null }">
-				 <input id="questions_button" type="submit" value="1:1질문하러가기" style="cursor: pointer" onclick="location.href='/goods/write?category_number=2'";>
+				 <input id="questions_button" type="submit" value="1:1질문하러가기" style="cursor: pointer" onclick="location.href='/goods/write?category_number=2'">
 				 </c:when>
 				 <c:otherwise>
-				 <input id="questions_button" type="submit" value="1:1질문하러가기" style="cursor: pointer" onclick="alert('로그인 해주세요')";>
+				 <input id="questions_button" type="submit" value="1:1질문하러가기" style="cursor: pointer" onclick="alert('로그인 해주세요')">
 				 </c:otherwise>
 			 </c:choose>
 		</section>
