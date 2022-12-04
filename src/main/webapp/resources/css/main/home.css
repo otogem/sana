@@ -1,4 +1,21 @@
 @charset "UTF-8";
-/* 기초 틀 잡는 용도 */
 
-/* 기초 틀 잡는 용도 */
+#wrap{
+	background-color: black;	
+}
+
+.home-ani{
+	margin:auto;
+	padding:350px 0;
+	color:white;
+	font-size: 42px;
+	text-align:center;
+}
+
+#home-ani-main{
+	font-size: 54px;
+	color:transparent;
+	background-clip: text;
+	-webkit-background-clip:text;
+	background-image: url('/resources/image/home/textback.png')
+}

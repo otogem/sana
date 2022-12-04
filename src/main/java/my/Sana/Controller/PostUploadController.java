@@ -155,7 +155,6 @@ public class PostUploadController {
 	// 이미지 주소 생성
 	@RequestMapping(value="/postdisplay",method=RequestMethod.GET)
 	public ResponseEntity<byte[]> getFile(String fileName){
-		System.out.println("1"+fileName);
 		
 		File file = new File("D:\\upload\\"+fileName);
 

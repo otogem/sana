@@ -21,13 +21,13 @@ li{
 }
 
 #wrap{
-	min-width: 100%;
 }
 
 #main-section{
 	padding-bottom:181px;
 	width:80%;
 	max-width:900px;
+	min-height: 50%;
 	margin: auto;
 }
 

@@ -65,7 +65,6 @@ public class PostController {
 			model.addAttribute("list",ps.list(post));
 			path="/";// 홈
 		}
-		//model.addAttribute("list",ss.list(category_number,post));
 		//int total=ps.total(post);
 		model.addAttribute("list",ps.list(post));
 		//model.addAttribute("paging",new PostPageSubVO(post,total));

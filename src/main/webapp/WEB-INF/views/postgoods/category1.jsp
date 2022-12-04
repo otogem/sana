@@ -46,9 +46,6 @@
 				<c:when test="${mbloginpost.id != null || kakaoInfo.nickname != null }">
 				 	<input id="category_button" type="submit" value="상품등록하기" style="cursor: pointer" onclick="location.href='/goods/write?category_number=1'";>
 				 </c:when>
-				 <c:otherwise>
-				 <input id="category_button" type="submit" value="상품등록하기" style="cursor: pointer" onclick="alert('로그인 해주세요')";>
-				 </c:otherwise>
 			 </c:choose>
 		 	
 		 	

@@ -77,11 +77,8 @@
 				
 			<c:choose>
 				<c:when test="${mbloginpost.id != null || kakaoInfo.nickname != null }">
-				 	<input id="support_button" type="submit" value="상품등록하기" style="cursor: pointer" onclick="location.href='/support/write?support_number=1'";>
+				 	<input id="support_button" type="submit" value="질문쓰기" style="cursor: pointer" onclick="location.href='/support/write?support_number=1'";>
 				 </c:when>
-				 <c:otherwise>
-				 <input id="support_button" type="submit" value="상품등록하기" style="cursor: pointer" onclick="alert('로그인 해주세요')";>
-				 </c:otherwise>
 			 </c:choose>
 			 </div>
 		</section>
