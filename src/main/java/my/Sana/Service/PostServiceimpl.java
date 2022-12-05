@@ -35,9 +35,9 @@ public class PostServiceimpl implements PostService{
 	}
 	
 	//list 추상메서드 구현
-	public ArrayList<PostVO> list(PostVO post){
-		System.out.println("postlist="+post);
-		return pm.list(post);
+	public ArrayList<PostVO> list(PostPageVO ppa){
+		System.out.println("postlist="+ppa);
+		return pm.list(ppa);
 	}
 	
 	//total 추상메서드 구현

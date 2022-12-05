@@ -1,12 +1,14 @@
 package my.Sana.Model;
 
+import java.util.ArrayList;
+
 public class PostPageVO {
 	private int pageNum; 	//페이지번호
 	private int amount; 	//한 페이지당 게시물 갯수
 	private String keyword; //키워드를 통해 검색.
 	private String type; 	//키워드 기준
 	private int category_number;
-	
+	private ArrayList<PostVO> post;
 	
 	//생성자
 	public PostPageVO() {
@@ -15,6 +17,13 @@ public class PostPageVO {
 	public PostPageVO(int pageNum,int amount) {
 		this.pageNum=pageNum;
 		this.amount=amount;
+	}
+	
+	public ArrayList<PostVO> getPost() {
+		return post;
+	}
+	public void setPost(ArrayList<PostVO> post) {
+		this.post = post;
 	}
 	public int getPageNum() {
 		return pageNum;
@@ -49,7 +58,7 @@ public class PostPageVO {
 	@Override
 	public String toString() {
 		return "PostPageVO [pageNum=" + pageNum + ", amount=" + amount + ", keyword=" + keyword + ", type=" + type
-				+ ", category_number=" + category_number + "]";
+				+ ", category_number=" + category_number + ", post=" + post + "]";
 	}
 
 	

@@ -24,6 +24,15 @@ img{
 #category-max-div{
 	font-size: 24px;
 	font-weight: 500;
+	display: inline-block;
+}
+
+#searchForm{
+	text-align: center;
+}
+
+#category-box-sub{
+	text-align: center;
 }
 
 #category-max-num{
@@ -40,6 +49,28 @@ img{
 .category-sell-box>a>div{
 	text-align: center;
 }
+
+/*페이징 css 시작*/
+.page_table{ /*페이지 감싼 테이블*/
+	border: none;
+	margin: auto;
+}
+
+.page_table>td{ /* a태그 색부여를 위한 td 감추기*/
+	border: 0px;
+	padding: 0 3px 0 3px;
+}
+
+.page_table>td>a{ /* a태그 꾸미는 파트 */
+	text-decoration: none;
+	font-size:30px;
+	color:black;
+}
+
+.page_table>.on>a{ /* 선택된 a태그 색부여 */
+	color:#f8e6e0;
+}
+/*페이징 css 끝*/
 
 #category_button{ /*상품등록 버튼*/
 	padding:10px 15px 10px 15px;

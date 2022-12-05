@@ -36,38 +36,38 @@ public class PostController {
 	
 	//각페이지별 category_number 각페이지별로 부여 이동
 	@RequestMapping(value = "/goods/category", method = RequestMethod.GET)
-	public String writepage(Model model,PostVO post) {
+	public String writepage(Model model,PostPageVO ppa) {
 		 String path="";
 
-		if(post.getCategory_number()==1) {// 만약에 category_number가 1이면
+		if(ppa.getCategory_number()==1) {// 만약에 category_number가 1이면
 			// 공지사항(post/notice)
-			model.addAttribute("list",ps.list(post));
+			model.addAttribute("list",ps.list(ppa));
 			path="postgoods/category1"; // category1
-		}else if(post.getCategory_number()==2) {	// 만약에 category_number가 2이면
-			model.addAttribute("list",ps.list(post));
+		}else if(ppa.getCategory_number()==2) {	// 만약에 category_number가 2이면
+			model.addAttribute("list",ps.list(ppa));
 			path="postgoods/category2";// category2
-		}else if(post.getCategory_number()==3) {	// 만약에 category_number가 3이면
-			model.addAttribute("list",ps.list(post));
+		}else if(ppa.getCategory_number()==3) {	// 만약에 category_number가 3이면
+			model.addAttribute("list",ps.list(ppa));
 			path="postgoods/category3";// category3
-		}else if(post.getCategory_number()==4) {	// 만약에 category_number가 4이면
-			model.addAttribute("list",ps.list(post));
+		}else if(ppa.getCategory_number()==4) {	// 만약에 category_number가 4이면
+			model.addAttribute("list",ps.list(ppa));
 			path="postgoods/category4";// category4
-		}else if(post.getCategory_number()==5) {	// 만약에 category_number가 5이면
-			model.addAttribute("list",ps.list(post));
+		}else if(ppa.getCategory_number()==5) {	// 만약에 category_number가 5이면
+			model.addAttribute("list",ps.list(ppa));
 			path="postgoods/category5";// category5
-		}else if(post.getCategory_number()==6) {	// 만약에 category_number가 6이면
-			model.addAttribute("list",ps.list(post));
+		}else if(ppa.getCategory_number()==6) {	// 만약에 category_number가 6이면
+			model.addAttribute("list",ps.list(ppa));
 			path="postgoods/category6";// category6
-		}else if(post.getCategory_number()==7) {	// 만약에 category_number가 7이면
-			model.addAttribute("list",ps.list(post));
+		}else if(ppa.getCategory_number()==7) {	// 만약에 category_number가 7이면
+			model.addAttribute("list",ps.list(ppa));
 			path="postgoods/category";// category
 		}else {// 그렇지 않으면
-			model.addAttribute("list",ps.list(post));
+			model.addAttribute("list",ps.list(ppa));
 			path="/";// 홈
 		}
-		//int total=ps.total(post);
-		model.addAttribute("list",ps.list(post));
-		//model.addAttribute("paging",new PostPageSubVO(post,total));
+		int total=ps.total(ppa);
+		model.addAttribute("list",ps.list(ppa));
+		model.addAttribute("paging",new PostPageSubVO(ppa,total));
 		return path;
 	}
 	

@@ -62,10 +62,10 @@ public class PostPageSubVO {
 	public void setNext(boolean next) {
 		this.next = next;
 	}
-	public PostPageVO getSpa() {
+	public PostPageVO getPpa() {
 		return ppa;
 	}
-	public void setSpa(PostPageVO ppa) {
+	public void setPpa(PostPageVO ppa) {
 		this.ppa = ppa;
 	}
 	public int getTotal() {
@@ -77,6 +77,8 @@ public class PostPageSubVO {
 	@Override
 	public String toString() {
 		return "PostPageSubVO [startPage=" + startPage + ", endPage=" + endPage + ", prev=" + prev + ", next=" + next
-				+ ", total=" + total + "]";
+				+ ", ppa=" + ppa + ", total=" + total + "]";
 	}
+	
+	
 }

@@ -35,10 +35,10 @@
 					<when test="type == 'C'.toString()">
 						and content like concat('%',#{keyword},'%')
 					</when>
-					<otherwise>
-						OR title like concat('%',null,'%')
-						OR content like concat('%',null,'%')
-					</otherwise>
+				    <when test="type == 'TC'.toString()">
+				      and title like concat('%',#{keyword},'%')
+				      or content like concat('%',#{keyword},'%')
+				    </when>	
 				</choose>
 			</if>
 			    order by rownum desc
@@ -59,10 +59,10 @@
 				    <when test="type == 'C'.toString()">
 				      and content like concat('%',#{keyword},'%')
 				    </when>
-				    <otherwise>
-				      or title like concat('%',null,'%')
-				      OR content like concat('%',null,'%')
-				    </otherwise>				    	
+				    <when test="type == 'TC'.toString()">
+				      and title like concat('%',#{keyword},'%')
+				      or content like concat('%',#{keyword},'%')
+				    </when>				    	
 			 </choose>
 		</if>
 	   </select>

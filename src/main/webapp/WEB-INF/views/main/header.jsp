@@ -15,22 +15,22 @@
 		<div class="title"><a href="/">SANA</a></div>
 	 		<div class="ham-con">
 
-            <div class="navbar-nav">
+     	<div class="navbar-nav"> 
                 <div class="search-con d-flex justify-content-center">
                     <input type="text" placeholder="검색어를 입력해주세요." />
                     <i class="bi bi-search"></i>
                 </div>
-            </div>
+            </div>        
 	<div id="ham-menu wrap">
 		<div class="ham-menu mt-5">
 		<ul id="home_header_center" class="ham-sub-menu">
 			<li><a href="/">HOME</a></li> 
-			<li><a href="/goods/category?category_number=1">1category</a></li>
-			<li><a href="/goods/category?category_number=2">2category</a></li>
-			<li><a href="/goods/category?category_number=3">3category</a></li>
-			<li><a href="/goods/category?category_number=4">4category</a></li>
-			<li><a href="/goods/category?category_number=5">5category</a></li>
-			<li><a href="/goods/category?category_number=6">6category</a></li>
+			<li><a href="/goods/category?category_number=1&type=&keyword=&pageNum=1&amount=10">1category</a></li>
+			<li><a href="/goods/category?category_number=2&type=&keyword=&pageNum=1&amount=10">2category</a></li>
+			<li><a href="/goods/category?category_number=3&type=&keyword=&pageNum=1&amount=10">3category</a></li>
+			<li><a href="/goods/category?category_number=4&type=&keyword=&pageNum=1&amount=10">4category</a></li>
+			<li><a href="/goods/category?category_number=5&type=&keyword=&pageNum=1&amount=10">5category</a></li>
+			<li><a href="/goods/category?category_number=6&type=&keyword=&pageNum=1&amount=10">6category</a></li>
 			<li><a href="/support/user?support_number=1&type=&keyword=&pageNum=1&amount=10">고객지원</a></li>
 		</ul>
 		</div>
