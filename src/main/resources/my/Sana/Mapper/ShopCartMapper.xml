@@ -5,6 +5,32 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="my.Sana.Mapper.ShopCartMapper">
 	
-
-
+	<!-- 카트 추가 -->	
+	<insert id="addCart">
+		insert into goodscart(id,product_number,product_count)
+		values(#{id},#{product_number},#{product_count})
+	</insert>
+	
+	<!-- 카트 삭제 -->
+	<delete id="deleteCart">
+		delete from goodscart where cartid = #{cartid}
+	</delete>
+	
+	<!-- 카트 수량 수정 -->
+	<update id="modifyCount">
+		update goodscart set product_count = #{product_count}
+	</update>
+	
+	<!-- 카트 목록 -->
+	<select id="getCart" resultType="my.Sana.Model.ShopCartVO">
+		select a.cartid, a.id,a.product_number,a.product_count,b.product_name,b.product_price,b.product_discount
+		from goodscart a left outer join goodslist b on a.product_number=b.product_number
+		where id = #{id}
+	</select>
+									
+	<select id="checkCart" resultType="my.Sana.Model.ShopCartVO">
+		select * from goodscart
+		where id = #{id} and product_number=#{product_number}
+	</select>
+	
 </mapper>

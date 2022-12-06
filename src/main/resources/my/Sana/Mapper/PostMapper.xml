@@ -10,8 +10,8 @@
 			from goodslist
 		</selectKey>
 		
-	  insert into goodslist(product_number,product_name,product_desc,product_price,category_number,product_stock)
-      values(#{product_number},#{product_name},#{product_desc},#{product_price},#{category_number},#{product_stock})
+	  insert into goodslist(product_number,product_name,product_desc,product_price,category_number,product_stock,product_discount)
+      values(#{product_number},#{product_name},#{product_desc},#{product_price},#{category_number},#{product_stock},#{product_discount})
 	</insert>
 	
 	<!-- goods-category 리스트 -->
@@ -21,7 +21,7 @@
         select
         @row_no:=IF(@prev_val =gl.category_number,@row_no+1,1)AS 
         rownum,@prev_val := gl.category_number as category_number,gl.product_number,product_name,product_stock,product_price,product_desc
-        ,product_cnt,product_date,Concat(replace(uploadpath,'\\','/'),'/',uuid,'_',fileName)as filem 
+        ,product_cnt,product_date,product_discount,Concat(replace(uploadpath,'\\','/'),'/',uuid,'_',fileName)as filem 
 		from  goodslist gl join goodsfile gf on gl.product_number = gf.product_number,
         (select @rownum :=0)z,
         (select @row_no := 0)x,
@@ -83,7 +83,8 @@
 			   set product_name=#{product_name},
 				   product_desc=#{product_desc},
 				   product_price=#{product_price},
-				   product_stock=#{product_stock}
+				   product_stock=#{product_stock},
+				   product_discount=#{product_discount}
 		   where product_number=#{product_number}
 		   </update>
 		   

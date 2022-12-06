@@ -7,6 +7,7 @@
 	<jsp:include page="../main/maincss.jsp"></jsp:include>
 	<link href="../resources/css/post/detail.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="/resources/js/post/postAttach.js"></script>
+	<script type="text/javascript" src="/resources/js/post/postdetail.js"></script>
 </head>
 <body>
 
@@ -31,7 +32,8 @@
 				 </c:when>
 			 </c:choose>
 			 
-			
+		</form>
+		
 			<div id="detail-box">
 				<div>
 					<input type="hidden" name="product_number" value="${detail.product_number}">
@@ -47,7 +49,18 @@
 					<div id="detail-sub-box">													
 						<div><strong>${detail.product_name }</strong></div>
 						<div><p>${detail.product_price }원</p></div>
+						
+						<input type="text" class="quantity_input" value="1">
+						<spna>
+							<button class="plus_btn">+</button>
+							<button class="minus_btn">-</button>
+						</spna>
+						<div class="button_set">
+							<a class="btn_cart">장바구니 담기</a>
+							<a class="btn_buy">바로구매</a>
+						</div>
 					</div>
+				
 					
 								첨부파일<div id="uploadResult">
 									<ul>
@@ -58,8 +71,7 @@
 			</div>
 			</div>
 			</section>
-			
-			</form>
+		
 	<!-- footer 파트 시작 -->
 		<jsp:include page="../main/footer.jsp"></jsp:include>
 	<!-- footer 파트 시작 -->

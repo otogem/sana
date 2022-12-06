@@ -23,6 +23,15 @@
 	
 	<context:component-scan base-package="my.Sana.Controller" />
 	
+	<interceptors>
+		<interceptor>
+			<mapping path="/cart/**"/>
+			<exclude-mapping path="/cart/add"/>
+			<beans:bean id="CartIntreceptor" class="my.Sana.interceptor.CartInterceptor"></beans:bean>
+		</interceptor>
+	</interceptors>
+	
+	
 	<beans:bean id="multipartResolver"
 		class="org.springframework.web.multipart.support.StandardServletMultipartResolver">
 	</beans:bean>

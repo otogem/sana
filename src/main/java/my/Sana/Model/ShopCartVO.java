@@ -1,20 +1,20 @@
 package my.Sana.Model;
 
-public class ShopCratVO {
+public class ShopCartVO {
 	//장바구니 상품 분류 번호
 	private int cartid;
-	//상품 개수
+	//상품 개수 bookCount
 	private int product_count;
-	//아이디
+	//아이디 memberID
 	private String id;
-	//상품번호
+	//상품번호 bookid
 	private int product_number;
 	
-	//상품이름
+	//상품이름 bookName
 	private String product_name;
-	//상품 가격
+	//상품 가격 bookprice
 	private int product_price;
-	//상품 할인
+	//상품 할인 bookdiscount
 	private int product_discount;
 	
 	//추가
@@ -24,7 +24,7 @@ public class ShopCratVO {
 	private int totalPrice;
 	
 	//변수값을 초기화 해주는 메서드
-	public void initTotal() {
+	public void initSaleTotal() {
 		this.salePrice = (int) (this.product_price * (1-this.product_discount));
 		this.totalPrice = this.salePrice*this.product_count;
 	}
@@ -42,11 +42,6 @@ public class ShopCratVO {
 
 	public int getSalePrice() {
 		return salePrice;
-	}
-
-
-	public void setSalePrice(int salePrice) {
-		this.salePrice = salePrice;
 	}
 
 
@@ -100,10 +95,6 @@ public class ShopCratVO {
 
 	public int getTotalPrice() {
 		return totalPrice;
-	}
-
-	public void setTotalPrice(int totalPrice) {
-		this.totalPrice = totalPrice;
 	}
 
 	@Override
