@@ -32,14 +32,13 @@
 						 </c:when>
 					 </c:choose>
 					 
-				</form>
-		
-			<div id="detail-box">
-				<div>
-					<input type="text" name="product_number" value="${detail.product_number}">
+					 <input type="hidden" name="product_number" value="${detail.product_number}">
 					<input type="hidden" name="category_number" value="${detail.category_number}">
 					<input type="hidden" name="product_stock" value="${detail.product_stock}">	
 					<input type="hidden" name="id" value="${mbloginpost.id}">
+				</form>
+			<div id="detail-box">
+				<div>
 					
 					<div id="detail-main-box">
 						<div><h1>위치 지정 test용</h1></div>

@@ -40,6 +40,9 @@
 				<tr><td class="service_sub_font">재고(수량)</td></tr>
 				<tr><td><input type="text" name="product_stock" style="width:50%" placeholder="수량" value="${detail.product_stock }"></td></tr>
 				
+				<tr><td class="service_sub_font">할인</td></tr>
+				<tr><td><input type="text" name="product_discount" style="width:50%" placeholder="할인률" value="${detail.product_discount }"></td></tr>
+				
 				<tr><td><input type="submit" id="uploadBtn" style="cursor: pointer" value="상품 수정" onclick="alert('상품 수정 완료')" formaction="/goods/modify"></td></tr>
 				
 			</table>
