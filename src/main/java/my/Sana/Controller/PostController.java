@@ -110,6 +110,7 @@ public class PostController {
 	/* 상품 삭제 */
 	@RequestMapping(value="/goods/remove",method = RequestMethod.POST)
 	public String remove(int product_number,PostVO post,RedirectAttributes rttr) {
+		System.out.println("왜 안돼");
 		String removepath="";
 		ArrayList<PostFileVO> filelist = ps.filelist(product_number);
 		System.out.println(product_number+"번 게시글 삭제");
@@ -118,18 +119,17 @@ public class PostController {
 			rttr.addFlashAttribute("result", "success");
 		}
 		//비즈니스 영역 연결한 후 PostService 에 있는 write메소드
-		if(post.getCategory_number()==1) {// 만약에 bgno가 1이면
-					// 공지사항(service/notice)
+		if(post.getCategory_number()==1) {// 만약에 Category_number가 1이면
 					removepath="redirect:/goods/category?category_number=1";
-			}else if(post.getCategory_number()==2) {	// 만약에 bgno가 2이면
+			}else if(post.getCategory_number()==2) {	// 만약에 Category_number가 2이면
 					removepath="redirect:/goods/category?category_number=2";
-			}else if(post.getCategory_number()==3){// 그렇지 않으면
+			}else if(post.getCategory_number()==3){// 만약에 Category_number가 3이면
 					removepath="redirect:/goods/category?category_number=3";
-			}else if(post.getCategory_number()==4){// 그렇지 않으면
+			}else if(post.getCategory_number()==4){// 만약에 Category_number가 4이면
 					removepath="redirect:/goods/category?category_number=4";
-			}else if(post.getCategory_number()==5){// 그렇지 않으면
+			}else if(post.getCategory_number()==5){// 만약에 Category_number가 5이면
 					removepath="redirect:/goods/category?category_number=5";
-			}else if(post.getCategory_number()==6){// 그렇지 않으면
+			}else if(post.getCategory_number()==6){// 만약에 Category_number가 6이면
 					removepath="redirect:/goods/category?category_number=6";
 			}
 		

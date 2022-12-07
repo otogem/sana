@@ -17,13 +17,20 @@ $(document).ready(function(){
 	
 	//서버로 전송할 데이터
 	const form = {
-			id : '${member.id}',
-			product_number : '${goodsinfo.product_number}',
+			id : $("input[name='id']").val(),
+			product_number : $("input[name='product_number']").val(),
 			product_count : ''
 	}
 	
+	$(".goods_detail_button").on("click", function(e){
+		alert($("input[name='product_number']").val())
+	});
+	
 	//장바구니 추가 버튼
 	$(".btn_cart").on("click", function(e){
+		
+		console.log(form);
+		
 		form.product_count = $(".quantity_input").val();
 		$.ajax({
 			url: '/cart/add',
@@ -36,6 +43,7 @@ $(document).ready(function(){
 	});
 	
 	function cartAlert(result){
+		console.log(result);
 		if(result == '0'){
 			alert("장바구니에 추가를 하지 못하였습니다.");
 		}else if(result == '1'){
@@ -46,4 +54,10 @@ $(document).ready(function(){
 			alert("로그인이 필요합니다.")
 		}
 	}
+	
+	//포인트 삽입
+//	let salePrice = "${detail.bookPrice - (goodsInfo.bookPrice*goodsInfo.bookDiscount)}"
+//		let point = salePrice*0.05;
+//		point = Math.floor(point);
+//		$(".point_span").text(point);
 });
