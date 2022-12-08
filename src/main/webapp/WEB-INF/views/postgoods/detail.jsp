@@ -48,8 +48,10 @@
 					<div id="detail-sub-box">													
 						<div><strong>${detail.product_name }</strong></div>
 						<div><p>${detail.product_price }원</p></div>
-						<p>${detail.product_discount }할인율</p>
-						
+						<div><span>${detail.product_discount }할인율</span></div>
+						<div>
+							적립 포인트 : <span class="point_span"></span>원
+						</div>
 						<input type="text" class="quantity_input" value="1">
 						<spna>
 							<button class="plus_btn">+</button>

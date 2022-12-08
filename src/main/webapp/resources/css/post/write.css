@@ -26,6 +26,17 @@
 #service_sub_content{
 	resize : none;
 }
+/* 
+.product_Discount_warn{
+	color: red;
+	display: none;
+} */
+
+.step_val{
+	display: block;
+	padding-top: 5px;
+	font-weight: 500;	
+}
 
 #uploadBtn{ /*상품 등록 버튼*/
 	padding:10px 15px 10px 15px;

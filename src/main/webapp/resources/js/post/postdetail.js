@@ -22,10 +22,6 @@ $(document).ready(function(){
 			product_count : ''
 	}
 	
-	$(".goods_detail_button").on("click", function(e){
-		alert($("input[name='product_number']").val())
-	});
-	
 	//장바구니 추가 버튼
 	$(".btn_cart").on("click", function(e){
 		
@@ -56,8 +52,8 @@ $(document).ready(function(){
 	}
 	
 	//포인트 삽입
-//	let salePrice = "${detail.bookPrice - (goodsInfo.bookPrice*goodsInfo.bookDiscount)}"
-//		let point = salePrice*0.05;
-//		point = Math.floor(point);
-//		$(".point_span").text(point);
+	let salePrice = "${detail.product_price - (detail.product_price*detail.product_discount)}"
+		let point = salePrice*0.02;
+		point = Math.floor(point);
+		$(".point_span").text(point);
 });

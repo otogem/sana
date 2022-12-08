@@ -18,13 +18,6 @@ public class PostPageVO {
 		this.pageNum=pageNum;
 		this.amount=amount;
 	}
-	
-	public ArrayList<PostVO> getPost() {
-		return post;
-	}
-	public void setPost(ArrayList<PostVO> post) {
-		this.post = post;
-	}
 	public int getPageNum() {
 		return pageNum;
 	}
@@ -55,11 +48,18 @@ public class PostPageVO {
 	public void setCategory_number(int category_number) {
 		this.category_number = category_number;
 	}
+	public ArrayList<PostVO> getPost() {
+		return post;
+	}
+	public void setPost(ArrayList<PostVO> post) {
+		this.post = post;
+	}
 	@Override
 	public String toString() {
 		return "PostPageVO [pageNum=" + pageNum + ", amount=" + amount + ", keyword=" + keyword + ", type=" + type
 				+ ", category_number=" + category_number + ", post=" + post + "]";
 	}
+
 
 	
 	

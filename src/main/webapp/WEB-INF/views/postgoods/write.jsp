@@ -7,6 +7,7 @@
 	<jsp:include page="../main/maincss.jsp"></jsp:include>
 	<link href="../resources/css/post/write.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="/resources/js/post/postUploadAjax.js"></script>
+	<script type="text/javascript" src="/resources/js/post/postwrite.js"></script>
 </head>
 <body>
 <!-- 헤더 파트  -->
@@ -35,11 +36,16 @@
 				<tr><td><input type="text" name="product_stock" style="width:50%" placeholder="재고"></td></tr>
 				
 				<tr><td class="service_sub_font">할인</td></tr>
-				<tr><td><input type="text" name="product_discount" style="width:50%" placeholder="할인률"></td></tr>
-				
+				<tr>
+					<td>
+						<input type="number" id="discount_interface" maxlength="2" value="0" style="width:50%">
+						<input type="hidden" name="product_discount" value="0">
+						<span class="step_val">할인 가격 : 
+							<span class="span_discount"></span>
+						</span>
+					</td>
+				</tr>
 				<tr><td><input type="submit" id="uploadBtn" style="cursor: pointer" value="상품 등록"></td></tr>
-				
-				
 			</table>
 			</form>
 					<div id="uploaddiv"><input type="file" name="uploadFile" multiple></div>
