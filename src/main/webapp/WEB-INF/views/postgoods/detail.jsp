@@ -1,13 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html>
   <head>
 <title>Home</title>
 	<jsp:include page="../main/maincss.jsp"></jsp:include>
 	<link href="../resources/css/post/detail.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="/resources/js/post/postAttach.js"></script>
-	<script type="text/javascript" src="/resources/js/post/postdetail.js"></script>
+	
 </head>
 <body>
 
@@ -45,18 +46,20 @@
 						<div><h2>위치 지정 test sub용</h2></div>	
 					</div>
 					
-					<div id="detail-sub-box">													
-						<div><strong>${detail.product_name }</strong></div>
-						<div><p>${detail.product_price }원</p></div>
-						<div><span>${detail.product_discount }할인율</span></div>
+					<div id="detail-sub-box">												
+						<div><strong>${detail.product_name }</strong>
+						<span><input name="detail-price" value="${detail.product_price}" class="price">원</span><br>
+						<span>
+							<fmt:formatNumber value="${detail.product_discount*100}" pattern="###" />%
+						</span>
 						<div>
 							적립 포인트 : <span class="point_span"></span>원
 						</div>
 						<input type="text" class="quantity_input" value="1">
-						<spna>
+						<span>
 							<button class="plus_btn">+</button>
 							<button class="minus_btn">-</button>
-						</spna>
+						</span>
 						<div class="button_set">
 							<a class="btn_cart">장바구니 담기</a>
 							<a class="btn_buy">바로구매</a>
@@ -78,5 +81,6 @@
 		<jsp:include page="../main/footer.jsp"></jsp:include>
 	<!-- footer 파트 시작 -->
 	</div>
+	<script type="text/javascript" src="/resources/js/post/postdetail.js"></script>
 </body>
 </html>

@@ -52,8 +52,12 @@ $(document).ready(function(){
 	}
 	
 	//포인트 삽입
-	let salePrice = "${detail.product_price - (detail.product_price*detail.product_discount)}"
-		let point = salePrice*0.02;
-		point = Math.floor(point);
-		$(".point_span").text(point);
+
+	let salePrice = $(".price").val();
+		
+	let point = salePrice*0.02;
+	
+	point = Math.floor(point);
+	$(".point_span").text(point);
+	console.log($(".point_span"));
 });

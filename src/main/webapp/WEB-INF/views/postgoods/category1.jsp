@@ -41,8 +41,21 @@
 							<input type="hidden" name="cnt" value="${category.product_cnt}">
 							<div><img src="/postdisplay?fileName=${category.filem}"></div>																	
 							<div><strong>${category.product_name }</strong></div>
-							<div><span style="text-decoration: line-through;">${category.product_price }원</span>-></div>
-							<div><span>${category.product_discount }할인율</span></div>
+							<div class="price">
+								<div class="sale_price">
+									<span style="text-decoration: line-through;">
+										정가:<fmt:formatNumber value="${category.product_price}" pattern="#,### 원" />
+									</span>->
+								</div>
+								
+								<div class="discount_price">
+									할인가:
+									<fmt:formatNumber value="${category.product_discount*100}" pattern="###" />%
+									<fmt:formatNumber value="${category.product_price-(category.product_price*category.product_discount)}" pattern="#,### 원" />							
+									
+								</div>
+								
+							</div>
 							<div>
 								<fmt:parseDate value="${category.product_date}" var="product_date" pattern="yyyy-MM-dd HH:mm:ss" />
 								<fmt:formatDate pattern="yyyy-MM-dd" value="${product_date}"/>

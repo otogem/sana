@@ -1,7 +1,9 @@
 /**
  * 
  */
-$(document).ready(function(){
+
+	$(document).ready(function(){
+		
 	/* 할인율 Input 설정 */
 	$("#discount_interface").on("keyup", function(){
 		let userInput = $("#discount_interface");
@@ -32,24 +34,4 @@ $(document).ready(function(){
 		$(".span_discount").html(discountPrice);
 		
 	});
-	
-	//할인율 유효성 체크
-	
-	$("#discount_interface").on("change keyup",function(){
-	let productDiscount = $("#discount_interface").val();
-	console.log(productDiscount)
-	console.log(isNaN(productDiscount))
-	if(!isNaN(productDiscount)){
-		console.log("aaaa")
-		$(".product_Discount_warn").css('display','none');
-	}else{
-		console.log($("#product_Discount_warn"))
-		console.log("bbbb")
-		console.log(productDiscount)
-		$(".product_Discount_warn").css('display','block');
-		console.log($(".product_Discount_warn"))
-		console.log("cccc")
-	}
-	});
 });
-

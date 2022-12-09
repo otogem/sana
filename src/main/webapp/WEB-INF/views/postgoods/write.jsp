@@ -38,11 +38,12 @@
 				<tr><td class="service_sub_font">할인</td></tr>
 				<tr>
 					<td>
-						<input type="number" id="discount_interface" maxlength="2" value="0" style="width:50%">
+						<input type="text" id="discount_interface" maxlength="2" value="0" style="width:50%">
 						<input type="hidden" name="product_discount" value="0">
-						<span class="step_val">할인 가격 : 
+						<span class="step_val">할인된 가격 : 
 							<span class="span_discount"></span>
 						</span>
+						<span class="product_Discount_warn" >1~99</span>
 					</td>
 				</tr>
 				<tr><td><input type="submit" id="uploadBtn" style="cursor: pointer" value="상품 등록"></td></tr>

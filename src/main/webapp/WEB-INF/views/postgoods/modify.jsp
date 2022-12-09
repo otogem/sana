@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+        <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html>
   <head>
 <title>Home</title>
@@ -8,6 +9,7 @@
 	<link href="../resources/css/post/modify.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="/resources/js/post/postUploadAjax.js"></script>
 	<script type="text/javascript" src="/resources/js/post/postUploadModify.js"></script>
+	<script type="text/javascript" src="/resources/js/post/postmodify.js"></script>
 </head>
 <body>
 
@@ -41,7 +43,15 @@
 				<tr><td><input type="text" name="product_stock" style="width:50%" placeholder="수량" value="${detail.product_stock }"></td></tr>
 				
 				<tr><td class="service_sub_font">할인</td></tr>
-				<tr><td><input type="text" name="product_discount" style="width:50%" placeholder="할인률" value="${detail.product_discount }"></td></tr>
+				<tr>
+					<td>
+						<input type="text" id="discount_interface" maxlength="2" value="<fmt:formatNumber type="number" maxFractionDigits="0" value="${detail.product_discount*100 }" />" style="width:50%">
+						<input type="text" name="product_discount" value="${detail.product_discount }">
+						<span class="step_val">할인 가격 : 
+							<span class="span_discount"></span>
+						</span>
+					</td>
+				</tr>
 				
 				<tr><td><input type="submit" id="uploadBtn" style="cursor: pointer" value="상품 수정" onclick="alert('상품 수정 완료')" formaction="/goods/modify"></td></tr>
 				
