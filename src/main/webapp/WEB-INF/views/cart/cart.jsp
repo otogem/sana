@@ -30,7 +30,7 @@
 				<div class="all_check_input_div">
 					<input type="checkbox" class="all_check_input input_size_20" checked="checked"><span class="all_chcek_span">전체선택</span>
 				</div>
-		
+				
 				<table class="subject_table">
 					<caption>표 제목 부분</caption>
 					<tbody>
@@ -60,7 +60,11 @@
 									<input type="hidden" class="individual_point_input" value="${cart.point}">
 									<input type="hidden" class="individual_totalPoint_input" value="${cart.totalpoint}">
 								</td>
-								<td class="td_width_2"></td>
+								<td class="td_width_2">
+									<div class="image_wrap" data-product_number="${cart.imageList[0].product_number}" data-path="${cart.imageList[0].uploadPath}" data-uuid="${cart.imageList[0].uuid}" data-filename="${cart.imageList[0].fileName}">
+										<img>
+									</div>
+								</td>
 								<td class="td_width_3">${cart.product_name}</td>
 								<td class="td_width_4 price_td">
 									<del>정가 : <fmt:formatNumber value="${cart.product_price}" pattern="#,### 원" /></del><br>
@@ -73,18 +77,31 @@
 										<button class="quantity_btn plus_btn">+</button>
 										<button class="quantity_btn minus_btn">-</button>
 									</div>
-									<a class="quantity_modify_btn">변경</a>
+									<a class="quantity_modify_btn" data-cartid="${cart.cartid}">변경</a>
 								</td>
 								<td class="td_width_4 table_text_align_center">
 									<fmt:formatNumber value="${cart.salePrice * cart.product_count}" pattern="#,### 원" />
 								</td>
-								<td class="td_width_4 table_text_align_center delete_btn"><button>삭제</button></td>
+								<td class="td_width_4 table_text_align_center">
+									<button class="delete_btn" data-cartid="${cart.cartid}">삭제</button>
+								</td>
 							</tr>
 						</c:forEach>
 					</tbody>
 				</table>
 				<table class="list_table">
 				</table>
+				<!-- 수량 조정 form -->
+				<form action="/cart/update" method="post" class="quantity_update_form">
+					<input type="hidden" name="cartid" class="update_cartId">
+					<input type="hidden" name="product_count" class="update_product_Count">
+					<input type="hidden" name="id" value="${mbloginpost.id}">
+				</form>
+				<!-- 삭제 form -->
+				<form action="/cart/delete" method="post" class="quantity_delete_form">
+					<input type="hidden" name="cartid" class="delete_cartId">
+					<input type="hidden" name="id" value="${mbloginpost.id}">
+				</form>
 			</div>
 			<!-- 가격 종합 -->
 			<div class="content_total_section">

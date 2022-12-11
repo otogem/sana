@@ -18,7 +18,7 @@
 	
 	<!-- 카트 수량 수정 -->
 	<update id="modifyCount">
-		update goodscart set product_count = #{product_count}
+		update goodscart set product_count = #{product_count} where cartid = #{cartid}
 	</update>
 	
 	<!-- 카트 목록 -->
@@ -27,7 +27,8 @@
 		from goodscart a left outer join goodslist b on a.product_number=b.product_number
 		where id = #{id}
 	</select>
-									
+	
+	<!-- 카트 확인 -->			
 	<select id="checkCart" resultType="my.Sana.Model.ShopCartVO">
 		select * from goodscart
 		where id = #{id} and product_number=#{product_number}

@@ -45,13 +45,25 @@ public class ShopCartServiceimpl implements ShopCartService{
 			vo.initSaleTotal();
 			
 			//이미지 정보 불러오기
-			int product_number = vo.product_number();
+			int product_number = vo.getProduct_number();
 			
-			List<PostFileVO> imageList = pfm.getAttachList(id);
+			List<PostFileVO> imageList = pfm.filelist(product_number);
 			
 			vo.setImageList(imageList);
 		}
 		
 		return cart;
+	}
+	
+	@Override
+	public int modifyCount(ShopCartVO cart) {
+		
+		return scm.modifyCount(cart);
+	}
+	
+	@Override
+	public int deleteCart(int cartid) {
+
+		return scm.deleteCart(cartid);
 	}
 }

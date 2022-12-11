@@ -39,17 +39,6 @@ public class ShopCartVO {
 		this.point = (int) (Math.floor(this.salePrice*0.05));
 		this.totalpoint = this.point * this.product_count;
 	}
-	
-	
-	public List<PostFileVO> getImageList() {
-		return imageList;
-	}
-
-
-	public void setImageList(List<PostFileVO> imageList) {
-		this.imageList = imageList;
-	}
-
 
 	public int getCartid() {
 		return cartid;
@@ -107,6 +96,14 @@ public class ShopCartVO {
 		this.product_discount = product_discount;
 	}
 
+	public List<PostFileVO> getImageList() {
+		return imageList;
+	}
+
+	public void setImageList(List<PostFileVO> imageList) {
+		this.imageList = imageList;
+	}
+
 	public int getSalePrice() {
 		return salePrice;
 	}
@@ -146,7 +143,9 @@ public class ShopCartVO {
 				+ ", product_discount=" + product_discount + ", imageList=" + imageList + ", salePrice=" + salePrice
 				+ ", totalPrice=" + totalPrice + ", point=" + point + ", totalpoint=" + totalpoint + "]";
 	}
-	
+
+
+
 
 	
 	

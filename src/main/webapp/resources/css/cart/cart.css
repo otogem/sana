@@ -25,13 +25,13 @@
 	    line-height: 110px;
 	    background-color: #8977AD;
 	    margin-bottom: 60px; 
-	 
+	 	text-align: center;
 	 }
 		 .content_subject span{ 
 		    padding-left: 30 px;
 		    display: inline-block;
 		    color: white;
-		    font-size: 50px;
+		    font-size: 32px;
 		    font-weight: bolder; 
 		 }
 	 
@@ -200,3 +200,14 @@
 		    	font-size: 20px;
 		    	font-weight: bold;		
 			}
+			
+		/* ¿ÃπÃ¡ˆ */
+		.image_wrap{
+			width: 100%;
+			height: 100%;
+		}
+		.image_wrap img{
+		    max-width: 85%;
+		    height: auto;
+		    display: block;		
+		}

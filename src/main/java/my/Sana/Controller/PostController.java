@@ -19,12 +19,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import my.Sana.Model.AttachImageVO;
 import my.Sana.Model.PostFileVO;
 import my.Sana.Model.PostPageSubVO;
 import my.Sana.Model.PostPageVO;
 import my.Sana.Model.PostVO;
-import my.Sana.Service.AttachService;
 import my.Sana.Service.PostService;
  
 @Controller
@@ -35,8 +33,6 @@ public class PostController {
 	
 	@Autowired
 	PostService ps;
-	@Autowired
-	AttachService as;
 	
 	//게시판 글쓰기 페이지(화면)
 	@RequestMapping(value = "/goods/write", method = RequestMethod.GET)
@@ -209,15 +205,5 @@ public class PostController {
 	public ResponseEntity<ArrayList<PostFileVO>>filelist(int product_number){
 		
 		return new ResponseEntity<>(ps.filelist(product_number),HttpStatus.OK);
-	}
-	
-	//이미지 정보 반환
-	@GetMapping(value="/getAttachList", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public ResponseEntity<List<AttachImageVO>> getAttachList(int bookId){
-		
-		logger.info("getAttachList.........." + bookId);
-		
-		return new ResponseEntity<List<AttachImageVO>>(as.getAttachList(bookId), HttpStatus.OK);
-		
 	}
 }

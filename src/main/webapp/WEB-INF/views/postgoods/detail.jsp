@@ -38,7 +38,7 @@
 					<input type="hidden" name="category_number" value="${detail.category_number}">
 					<input type="hidden" name="product_stock" value="${detail.product_stock}">	
 					<input type="hidden" name="id" value="${mbloginpost.id}">
-					<input type="text" name="product_discount" value="${detail.product_discount*100}">
+					<input type="hidden" name="product_discount" value="${detail.product_discount*100}">
 				</form>
 			<div id="detail-box">
 				<div>

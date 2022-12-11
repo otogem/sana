@@ -37,12 +37,31 @@ public class ShopCartController {
 		return result + "";
 	}
 	
-	
+	//장바구니 아이디별 페이지
 	@GetMapping("/cart/{id}")
 	public String CartPageGet(@PathVariable("id") String id, Model model) {
 		
 		model.addAttribute("cart", scs.getCartList(id));
 		
 		return "/cart/cart";
+	}
+	
+	//장바구니 수량 수정 post
+	@PostMapping("/cart/update")
+	public String updateCartPost(ShopCartVO cart) {
+		
+		scs.modifyCount(cart);
+		
+		return "redirect:/cart/" + cart.getId();
+	}
+	
+	// 장바구니 삭제 post
+	@PostMapping("/cart/delete")
+	public String deleteCartPOST(ShopCartVO cart) {
+		System.out.println("실행됨?");
+		scs.deleteCart(cart.getCartid());
+		
+		return "redirect:/cart/" + cart.getId();
+		
 	}
 }
