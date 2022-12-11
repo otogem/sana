@@ -7,6 +7,7 @@
 <title>Home</title>
 	<jsp:include page="../main/maincss.jsp"></jsp:include>
 	<link href="../resources/css/post/modify.css" rel="stylesheet" type="text/css">
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 	<script type="text/javascript" src="/resources/js/post/postUploadAjax.js"></script>
 	<script type="text/javascript" src="/resources/js/post/postUploadModify.js"></script>
 	<script type="text/javascript" src="/resources/js/post/postmodify.js"></script>

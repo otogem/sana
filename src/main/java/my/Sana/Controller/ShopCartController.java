@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -32,11 +33,16 @@ public class ShopCartController {
 		}
 		//카트 등록
 		int result = scs.addCart(cart);
+		System.out.println(cart);
 		return result + "";
 	}
 	
-	@GetMapping("/cart/add")
-	public String addCartGet(ShopCartVO cart, Model model) {
-		return "/cart/add";
+	
+	@GetMapping("/cart/{id}")
+	public String CartPageGet(@PathVariable("id") String id, Model model) {
+		
+		model.addAttribute("cart", scs.getCartList(id));
+		
+		return "/cart/cart";
 	}
 }

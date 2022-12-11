@@ -62,7 +62,7 @@
 				</li>
 				<!-- 로그인,회원가입 나머지는 추후 추가. -->
 				<li class="cart fab">
-					<a></a>
+					<a href="/cart/${mbloginpost.id}"></a>
 				</li>
 				<!-- 바로 장바구니 로 이동 -->
 			</ul>	

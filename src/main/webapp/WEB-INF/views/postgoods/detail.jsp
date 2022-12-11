@@ -7,6 +7,7 @@
 <title>Home</title>
 	<jsp:include page="../main/maincss.jsp"></jsp:include>
 	<link href="../resources/css/post/detail.css" rel="stylesheet" type="text/css">
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 	<script type="text/javascript" src="/resources/js/post/postAttach.js"></script>
 	
 </head>
@@ -37,6 +38,7 @@
 					<input type="hidden" name="category_number" value="${detail.category_number}">
 					<input type="hidden" name="product_stock" value="${detail.product_stock}">	
 					<input type="hidden" name="id" value="${mbloginpost.id}">
+					<input type="text" name="product_discount" value="${detail.product_discount*100}">
 				</form>
 			<div id="detail-box">
 				<div>

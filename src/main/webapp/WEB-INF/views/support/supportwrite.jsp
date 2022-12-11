@@ -6,6 +6,7 @@
 <title>category-write</title>
 	<jsp:include page="../main/maincss.jsp"></jsp:include>
 	<link href="../resources/css/support/supportwrite.css" rel="stylesheet" type="text/css">
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 	<script type="text/javascript" src="../resources/js/support/supportUploadAjax.js"></script>
 </head>
 <body>

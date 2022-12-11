@@ -6,6 +6,7 @@
 <title>사나 고객센터</title>
 	<jsp:include page="../main/maincss.jsp"></jsp:include>
 	<link href="../resources/css/support/supportmain.css" rel="stylesheet" type="text/css">
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 	<script type="text/javascript" src="/resources/js/support/supportsearch.js"></script>
 </head>
 <body>

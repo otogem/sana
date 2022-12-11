@@ -4,27 +4,39 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import my.Sana.Model.AttachImageVO;
 import my.Sana.Model.PostFileVO;
 import my.Sana.Model.PostPageSubVO;
 import my.Sana.Model.PostPageVO;
 import my.Sana.Model.PostVO;
+import my.Sana.Service.AttachService;
 import my.Sana.Service.PostService;
  
 @Controller
 public class PostController {
 	
+	
+	private static final Logger logger = LoggerFactory.getLogger(PostController.class);
+	
 	@Autowired
 	PostService ps;
+	@Autowired
+	AttachService as;
 	
 	//게시판 글쓰기 페이지(화면)
 	@RequestMapping(value = "/goods/write", method = RequestMethod.GET)
@@ -40,7 +52,6 @@ public class PostController {
 		 String path="";
 
 		if(ppa.getCategory_number()==1) {// 만약에 category_number가 1이면
-			// 공지사항(post/notice)
 			model.addAttribute("list",ps.list(ppa));
 			path="postgoods/category1"; // category1
 		}else if(ppa.getCategory_number()==2) {	// 만약에 category_number가 2이면
@@ -198,5 +209,15 @@ public class PostController {
 	public ResponseEntity<ArrayList<PostFileVO>>filelist(int product_number){
 		
 		return new ResponseEntity<>(ps.filelist(product_number),HttpStatus.OK);
+	}
+	
+	//이미지 정보 반환
+	@GetMapping(value="/getAttachList", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public ResponseEntity<List<AttachImageVO>> getAttachList(int bookId){
+		
+		logger.info("getAttachList.........." + bookId);
+		
+		return new ResponseEntity<List<AttachImageVO>>(as.getAttachList(bookId), HttpStatus.OK);
+		
 	}
 }

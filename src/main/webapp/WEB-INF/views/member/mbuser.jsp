@@ -6,7 +6,7 @@
 <title>Home</title>
 	<jsp:include page="../main/maincss.jsp"></jsp:include>
 	<link href="../resources/css/member/mbuser.css" rel="stylesheet" type="text/css">
-	
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 	<!-- 카카오 우편주소 스크립트 -->
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script>

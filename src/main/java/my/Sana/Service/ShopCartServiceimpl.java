@@ -1,9 +1,13 @@
 package my.Sana.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import my.Sana.Mapper.PostFileMapper;
 import my.Sana.Mapper.ShopCartMapper;
+import my.Sana.Model.PostFileVO;
 import my.Sana.Model.ShopCartVO;
 
 @Service
@@ -11,6 +15,8 @@ public class ShopCartServiceimpl implements ShopCartService{
 	
 	@Autowired
 	ShopCartMapper scm;
+	@Autowired
+	PostFileMapper pfm;
 	
 	@Override
 	public int addCart(ShopCartVO cart) {
@@ -27,5 +33,25 @@ public class ShopCartServiceimpl implements ShopCartService{
 		} catch (Exception e) {
 			return 0;
 		}
+	}
+	
+	@Override
+	public List<ShopCartVO> getCartList(String id){
+		
+		List<ShopCartVO> cart = scm.getCart(id);
+		
+		for(ShopCartVO vo : cart) {
+			//종합정보 초기화
+			vo.initSaleTotal();
+			
+			//이미지 정보 불러오기
+			int product_number = vo.product_number();
+			
+			List<PostFileVO> imageList = pfm.getAttachList(id);
+			
+			vo.setImageList(imageList);
+		}
+		
+		return cart;
 	}
 }

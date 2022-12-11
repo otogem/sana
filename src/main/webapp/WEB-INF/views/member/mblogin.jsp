@@ -7,6 +7,7 @@
 <title>Home</title>
 	<jsp:include page="../main/maincss.jsp"></jsp:include>
 	<link href="../resources/css/member/mblogin.css" rel="stylesheet" type="text/css">
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 	  <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
   <script>
   //카카오로그인

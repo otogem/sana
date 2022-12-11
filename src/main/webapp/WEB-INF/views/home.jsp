@@ -6,6 +6,7 @@
 <title>Sana</title>
 	<jsp:include page="main/maincss.jsp"></jsp:include>
 	<link href="../resources/css/main/home.css" rel="stylesheet" type="text/css">
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 	<script type="text/javascript" src="/resources/js/main/home.js"></script> 
 	<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 

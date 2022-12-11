@@ -7,6 +7,7 @@
 <title>category</title>
 	<jsp:include page="../main/maincss.jsp"></jsp:include>
 	<link href="../resources/css/post/category.css" rel="stylesheet" type="text/css">
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 	<script type="text/javascript" src="/resources/js/support/supportsearch.js"></script>
 </head>
 <body>
@@ -44,12 +45,11 @@
 							<div class="price">
 								<div class="sale_price">
 									<span style="text-decoration: line-through;">
-										정가:<fmt:formatNumber value="${category.product_price}" pattern="#,### 원" />
+										상품가:<fmt:formatNumber value="${category.product_price}" pattern="#,### 원" />											
 									</span>->
 								</div>
 								
 								<div class="discount_price">
-									할인가:
 									<fmt:formatNumber value="${category.product_discount*100}" pattern="###" />%
 									<fmt:formatNumber value="${category.product_price-(category.product_price*category.product_discount)}" pattern="#,### 원" />							
 									

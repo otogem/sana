@@ -1,47 +1,53 @@
 package my.Sana.Model;
 
+import java.util.List;
+
 public class ShopCartVO {
 	//장바구니 상품 분류 번호
 	private int cartid;
-	//상품 개수 bookCount
+	//상품 개수
 	private int product_count;
-	//아이디 memberID
+	//아이디
 	private String id;
-	//상품번호 bookid
+	//상품번호
 	private int product_number;
 	
-	//상품이름 bookName
+	//상품이름
 	private String product_name;
-	//상품 가격 bookprice
+	//상품 가격
 	private int product_price;
-	//상품 할인 bookdiscount
-	private int product_discount;
+	//상품 할인
+	private double product_discount;
+	
+	//상품이미지
+	private List<PostFileVO> imageList;
 	
 	//추가
 	//할인률
 	private int salePrice;
 	//판매가격에 수량을 곱한 총가격
 	private int totalPrice;
+	//포인트
+	private int point;
+	//총합 포인트
+	private int totalpoint;
 	
 	//변수값을 초기화 해주는 메서드
 	public void initSaleTotal() {
 		this.salePrice = (int) (this.product_price * (1-this.product_discount));
 		this.totalPrice = this.salePrice*this.product_count;
+		this.point = (int) (Math.floor(this.salePrice*0.05));
+		this.totalpoint = this.point * this.product_count;
 	}
 	
 	
-	public int getProduct_discount() {
-		return product_discount;
+	public List<PostFileVO> getImageList() {
+		return imageList;
 	}
 
 
-	public void setProduct_discount(int product_discount) {
-		this.product_discount = product_discount;
-	}
-
-
-	public int getSalePrice() {
-		return salePrice;
+	public void setImageList(List<PostFileVO> imageList) {
+		this.imageList = imageList;
 	}
 
 
@@ -93,17 +99,55 @@ public class ShopCartVO {
 		this.product_price = product_price;
 	}
 
+	public double getProduct_discount() {
+		return product_discount;
+	}
+
+	public void setProduct_discount(double product_discount) {
+		this.product_discount = product_discount;
+	}
+
+	public int getSalePrice() {
+		return salePrice;
+	}
+
+	public void setSalePrice(int salePrice) {
+		this.salePrice = salePrice;
+	}
+
 	public int getTotalPrice() {
 		return totalPrice;
 	}
 
+	public void setTotalPrice(int totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+
+	public int getPoint() {
+		return point;
+	}
+
+	public void setPoint(int point) {
+		this.point = point;
+	}
+
+	public int getTotalpoint() {
+		return totalpoint;
+	}
+
+	public void setTotalpoint(int totalpoint) {
+		this.totalpoint = totalpoint;
+	}
+
 	@Override
 	public String toString() {
-		return "ShopCratVO [cartid=" + cartid + ", product_count=" + product_count + ", id=" + id + ", product_number="
+		return "ShopCartVO [cartid=" + cartid + ", product_count=" + product_count + ", id=" + id + ", product_number="
 				+ product_number + ", product_name=" + product_name + ", product_price=" + product_price
-				+ ", product_discount=" + product_discount + ", salePrice=" + salePrice + ", totalPrice=" + totalPrice
-				+ "]";
+				+ ", product_discount=" + product_discount + ", imageList=" + imageList + ", salePrice=" + salePrice
+				+ ", totalPrice=" + totalPrice + ", point=" + point + ", totalpoint=" + totalpoint + "]";
 	}
+	
+
 	
 	
 }
