@@ -20,9 +20,9 @@
 			<div id="main-section-sub">
 			<form id="form" role="form" method="post">
 			<table>
-				<tr><td><input type="text" name="id" value="${sessionScope.mbloginpost.id}"></td></tr>
-				<tr><td><input type="text" name="name" value="${sessionScope.mbloginpost.name}"></td></tr>
-				<tr><td><input type="text" name="support_number" value="${support_number}"></td></tr>
+				<tr><td><input type="hidden" name="id" value="${sessionScope.mbloginpost.id}"></td></tr>
+				<tr><td><input type="hidden" name="name" value="${sessionScope.mbloginpost.name}"></td></tr>
+				<tr><td><input type="hidden" name="support_number" value="${support_number}"></td></tr>
 				<tr><td class="support_sub_font">제목</td></tr>
 				<tr><td><input type="text" name="title" class="support_sub_font"></td></tr>
 				

@@ -5,7 +5,7 @@
   <head>
 <title>category-write</title>
 	<jsp:include page="../main/maincss.jsp"></jsp:include>
-	<link href="../resources/css/post/write.css" rel="stylesheet" type="text/css">
+	<link href="../resources/css/support/supportdetail.css" rel="stylesheet" type="text/css">
 	<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 	<script type="text/javascript" src="../resources/js/support/supportAttach.js"></script>
 </head>
@@ -25,12 +25,12 @@
 							<td>
 			<c:choose>
 			     <c:when test="${detail.id==sessionScope.mbloginpost.id || sessionScope.mbloginpost.id=='admin'}">
-								<a href="/support/modify?bno=${detail.bno }&bgno=${detail.support_number}" class="bkind_detail_button" style="cursor: pointer">수정 하러 하기</a>
+								<a href="/support/modify?bno=${detail.bno }&bgno=${detail.support_number}" class="support_detail_button" style="cursor: pointer">수정 하러 하기</a>
 					</c:when>
 			 </c:choose>
 			<c:choose>
 			     <c:when test="${detail.id==sessionScope.mbloginpost.id || sessionScope.mbloginpost.id=='admin'}">
-			 		<input class="bkind_detail_button" type="submit" value="삭제 하기" style="cursor: pointer"  onclick="alert('삭제되었습니다.')" formaction="/support/remove">
+			 		<input class="support_detail_button" type="submit" value="삭제 하기" style="cursor: pointer"  onclick="alert('삭제되었습니다.')" formaction="/support/remove">
 				 </c:when>
 			 </c:choose>
 							</td>

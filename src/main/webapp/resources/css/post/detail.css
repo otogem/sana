@@ -19,6 +19,10 @@
 	}
 }
 
+#main-section-sub{
+	width:100%;
+}
+
 /* 수정 삭제 버튼*/
 .goods_detail_button{
 	text-decoration:none;

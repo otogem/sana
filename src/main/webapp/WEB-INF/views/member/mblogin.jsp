@@ -65,7 +65,6 @@
 						  </ul>
 					</div>
 					<div class="main-login-line">
-						<span>네이버 로그인</span>
 					</div>
 				</div>
 			</div>

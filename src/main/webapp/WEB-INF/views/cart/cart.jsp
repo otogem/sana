@@ -73,7 +73,7 @@
 								</td>
 								<td class="td_width_4 table_text_align_center">
 									<div class="table_text_align_center quantity_div">
-										<input type="text" value="${cart.product_count}" class="quantity_input">	
+										<input type="text" value="${cart.product_count}" class="quantity_input" readonly="readonly">	
 										<button class="quantity_btn plus_btn">+</button>
 										<button class="quantity_btn minus_btn">-</button>
 									</div>

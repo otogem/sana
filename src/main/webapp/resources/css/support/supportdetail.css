@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+/* 수정 삭제 버튼*/
+.support_detail_button{
+	text-decoration:none;
+	padding:7px;
+	background-color: #FFFFFF;
+	border: #f8e6e0 2px solid;
+	border-radius:5px;
+	margin-left:5px; 
+	width:110px;
+	height: 45px;
+	font-size: 17px;
+	color: black;
+}
+
+.support_detail_button:hover{
+	background-color: #f8e6e0;
+}
